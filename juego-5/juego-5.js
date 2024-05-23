@@ -1,69 +1,69 @@
 // Paso 1: Crear un arreglo de objetos
 var fotos = [
   {
-    url: "img/señales-informativas/Caseta-telefonica.png",
+    url: "../img/señales-informativas/Caseta-telefonica.png",
     tematica: "señales informativas",
   },
   {
-    url: "img/señales-informativas/Estacion-de-servicio.png",
+    url: "../img/señales-informativas/Estacion-de-servicio.png",
     tematica: "señales informativas",
   },
   {
-    url: "img/señales-informativas/Oficina-de-correos.png",
+    url: "../img/señales-informativas/Oficina-de-correos.png",
     tematica: "señales informativas",
   },
   {
-    url: "img/señales-informativas/Oficinas-de-informacion.png",
+    url: "../img/señales-informativas/Oficinas-de-informacion.png",
     tematica: "señales informativas",
   },
   {
-    url: "img/señales-informativas/Primeros-auxilios.png",
+    url: "../img/señales-informativas/Primeros-auxilios.png",
     tematica: "señales informativas",
   },
   {
-    url: "img/señales-informativas/Taller-mecanico.png",
+    url: "../img/señales-informativas/Taller-mecanico.png",
     tematica: "señales informativas",
   },
   {
-    url: "img/señales-preventivas/Camino-sinuoso.png",
+    url: "../img/señales-preventivas/Camino-sinuoso.png",
     tematica: "señales preventivas",
   },
   {
-    url: "img/señales-preventivas/Contracurva.png",
+    url: "../img/señales-preventivas/Contracurva.png",
     tematica: "señales preventivas",
   },
-  { url: "img/señales-preventivas/Cruce.png", tematica: "señales preventivas" },
+  { url: "../img/señales-preventivas/Cruce.png", tematica: "señales preventivas" },
   {
-    url: "img/señales-preventivas/Curva-cerrada.png",
+    url: "../img/señales-preventivas/Curva-cerrada.png",
     tematica: "señales preventivas",
   },
   {
-    url: "img/señales-preventivas/Curva-sinuosa.png",
+    url: "../img/señales-preventivas/Curva-sinuosa.png",
     tematica: "señales preventivas",
   },
-  { url: "img/señales-preventivas/Curva.png", tematica: "señales preventivas" },
+  { url: "../img/señales-preventivas/Curva.png", tematica: "señales preventivas" },
   {
-    url: "img/señales-restrictivas/Ceda-el-paso.png",
+    url: "../img/señales-restrictivas/Ceda-el-paso.png",
     tematica: "señales restrictivas",
   },
   {
-    url: "img/señales-restrictivas/Circulacion.png",
+    url: "../img/señales-restrictivas/Circulacion.png",
     tematica: "señales restrictivas",
   },
   {
-    url: "img/señales-restrictivas/Inspeccion.png",
+    url: "../img/señales-restrictivas/Inspeccion.png",
     tematica: "señales restrictivas",
   },
   {
-    url: "img/señales-restrictivas/Prohibido-rebasar.png",
+    url: "../img/señales-restrictivas/Prohibido-rebasar.png",
     tematica: "señales restrictivas",
   },
   {
-    url: "img/señales-restrictivas/Velocidad-maxima.png",
+    url: "../img/señales-restrictivas/Velocidad-maxima.png",
     tematica: "señales restrictivas",
   },
   {
-    url: "img/señales-restrictivas/Vuelta-continua.png",
+    url: "../img/señales-restrictivas/Vuelta-continua.png",
     tematica: "señales restrictivas",
   },
 ];
