@@ -1,0 +1,30 @@
+#contenedorJuego {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+#contedorTexto {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#contenedorFotos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+}
+  
+#contenedorFotos img {
+    width: 33.33%;
+    padding: 5px;
+    box-sizing: border-box; /* This will include any padding or border in the width */
+}
+.selected {
+    border: 2px solid red;
+  }
