@@ -6,13 +6,6 @@ let proximaLetra = 0;
 let palabraParaAdivinar = PALABRAS_JUEGO[Math.floor(Math.random() * PALABRAS_JUEGO.length)]
 let adivinanzasPendientes = INTENTOS;
 
-// Una chance mas cuando hay palabras mas largas
-if (palabraParaAdivinar.length > 5) {
-    adivinanzasPendientes += 1;
-}
-
-
-console.log(palabraParaAdivinar)
 
 function iniciarTablero() {
     let tablero = document.getElementById("game-board");
@@ -182,3 +175,27 @@ document.getElementById("keyboard-cont").addEventListener("click", (e) => {
 
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
 })
+
+// Instrucciones
+
+const botonJugar = document.getElementById("btn-jugar");
+const modalInstrucciones = document.getElementById("instrucciones-modal");
+const botonAyuda = document.getElementById("btn-ayuda");
+const backdrop = document.getElementById("backdrop")
+
+botonJugar.onclick = function() {
+    modalInstrucciones.style.display = "none";
+    backdrop.style.display = "none";
+}
+
+botonAyuda.onclick = function() {
+    modalInstrucciones.style.display = "grid";
+    backdrop.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == backdrop) {
+        modalInstrucciones.style.display = "none";
+        backdrop.style.display = "none";
+    }
+}
