@@ -1,0 +1,12 @@
+.parent{
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+.imagenes img{
+    border: 2px, solid, black;
+    border-radius: 25px;
+    height: 350px; 
+    width: 250px;
+}
