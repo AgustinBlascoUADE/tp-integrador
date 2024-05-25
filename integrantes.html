@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SafeRoad</title>
     <!-- Agrega las referencias a Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -38,8 +38,31 @@
         </div>
     </nav>
     <main>
-        <h1>Avances</h1>
-        <p>En esta sección se mostrarán los avances del proyecto</p>
+        <div class="imagenes">
+            <style>
+                .parent {
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                    grid-template-rows: repeat(6, 1fr);
+                    grid-column-gap: 0px;
+                    grid-row-gap: 0px;
+                    }
+                .imagenes 
+
+                .div1 { grid-area: 1 / 2 / 4 / 4; border-radius: 5; }
+                .div2 { grid-area: 1 / 4 / 4 / 6; border-radius: 5; }
+                .div3 { grid-area: 4 / 1 / 7 / 3; border-radius: 5; }
+                .div4 { grid-area: 4 / 3 / 7 / 5; border-radius: 5; }
+                .div5 { grid-area: 4 / 5 / 7 / 7; border-radius: 5; }
+            </style>
+            <div class="parent">
+                <div class="div1"><img src="" alt=""> </div>
+                <div class="div2"><img src="" alt=""> </div>
+                <div class="div3"><img src="" alt=""> </div>
+                <div class="div4"><img src="" alt=""> </div>
+                <div class="div5"><img src="" alt=""> </div>
+            </div>
+        </div>
     </main>
     <footer>
         <p>"Derechos reservados - Sitio desarrollado para uso
