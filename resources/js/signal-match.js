@@ -3,68 +3,91 @@ var fotos = [
   {
     url: "../img/señales-informativas/Caseta-telefonica.png",
     tematica: "señales informativas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-informativas/Estacion-de-servicio.png",
     tematica: "señales informativas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-informativas/Oficina-de-correos.png",
     tematica: "señales informativas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-informativas/Oficinas-de-informacion.png",
     tematica: "señales informativas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-informativas/Primeros-auxilios.png",
     tematica: "señales informativas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-informativas/Taller-mecanico.png",
     tematica: "señales informativas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-preventivas/Camino-sinuoso.png",
     tematica: "señales preventivas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-preventivas/Contracurva.png",
     tematica: "señales preventivas",
+    seleccionada: false,
   },
-  { url: "../img/señales-preventivas/Cruce.png", tematica: "señales preventivas" },
+  { url: "../img/señales-preventivas/Cruce.png",
+    tematica: "señales preventivas", 
+    seleccionada: false,
+  },
+    
   {
     url: "../img/señales-preventivas/Curva-cerrada.png",
     tematica: "señales preventivas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-preventivas/Curva-sinuosa.png",
     tematica: "señales preventivas",
+    seleccionada: false,
   },
-  { url: "../img/señales-preventivas/Curva.png", tematica: "señales preventivas" },
+  { url: "../img/señales-preventivas/Curva.png",
+    tematica: "señales preventivas",
+    seleccionada: false,
+  },
   {
     url: "../img/señales-restrictivas/Ceda-el-paso.png",
     tematica: "señales restrictivas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-restrictivas/Circulacion.png",
     tematica: "señales restrictivas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-restrictivas/Inspeccion.png",
     tematica: "señales restrictivas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-restrictivas/Prohibido-rebasar.png",
     tematica: "señales restrictivas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-restrictivas/Velocidad-maxima.png",
     tematica: "señales restrictivas",
+    seleccionada: false,
   },
   {
     url: "../img/señales-restrictivas/Vuelta-continua.png",
     tematica: "señales restrictivas",
+    seleccionada: false,
   },
 ];
 
@@ -87,6 +110,7 @@ function mostrarFotos() {
     img.addEventListener("click", function () {
       // Toggle the 'selected' class
       this.classList.toggle("selected");
+      foto.seleccionada = !foto.seleccionada;
     });
 
     let boton = document.getElementById("boton");
@@ -95,14 +119,23 @@ function mostrarFotos() {
 }
 
 function verificar() {
-  let seleccionadas = document.querySelectorAll(".selected");
+  let estaCorrecto=true;
   let correctas = mezclarFotos.filter((foto) => foto.tematica === tematica);
-  console.log(seleccionadas.length);
-  console.log(correctas.length);
-  if (seleccionadas.length === correctas.length) {
-    alert("¡Felicidades! Has seleccionado todas las fotos correctas");
+  mezclarFotos.forEach(foto => {
+    if (foto.seleccionada === true && correctas.includes(foto) === false) {
+      estaCorrecto = false;
+    }
+    else if (foto.seleccionada === false && correctas.includes(foto) === true) {
+      estaCorrecto = false;
+    }
+    
+  });
+  if (estaCorrecto) {
+    alert("¡Felicidades! Has seleccionado todas las fotos correctas")
     location.reload();
-  } else {
+  }
+  else {
     alert("¡Inténtalo de nuevo!");
   }
+  
 }
