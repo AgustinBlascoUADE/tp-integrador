@@ -1,48 +1,95 @@
-String.prototype.replaceAt = function (index, character) {
-    return this.substring(0, index) + character + this.substring(index + 1);}
-
-const palabras_horcado = ["velocidad", "cinturon", "vial", "auxilios", "manos", "aire", "parabrisas"];
-const pistas_horcado = ["Siempre que manejemos debemos respetar el limite de ...", "Al subirnos a un auto, debemos asegurarnos de ponernos el ...",
-    "Esta página nos ensenha sobre la seguridad ...", "En el auto, siempre llevar con nosotros un kit de primeros ...", 
-    "Al estacionar el auto, nos debemos asegurar de poner el freno de ...", "Si chocamos, se activaran las bolsas de ...",
-    "Siempre debemos mantener limpio el ..."
-]
-
-const numero = Math.floor(Math.random() * palabras_horcado.length);
-const palabra = palabras_horcado[numero];
-const pista = pistas_horcado[numero];
-
-palabraConGuiones = palabra.replace(/./g, "_ ");
-
-document.querySelector('#display').innerHTML = palabraConGuiones;
-document.querySelector('#pista').innerHTML = pista;
+// Palabras para el juego
+const palabras_horcado = [
+    "limite de velocidad", 
+    "cinturon de seguridad", 
+    "seguridad vial", 
+    "primeros auxilios", 
+    "freno de manos", 
+    "bolsa de aire", 
+    "parabrisas", 
+    "retrovisor", 
+    "cambio de carril",
+];
 
 
-document.querySelector('#verificar').addEventListener('click', () =>
-{
-    //pido la letra que ingreso el usuario
-    const letra = document.querySelector('#letra').value
-    //declaro un booleano como falso para cambiar si esta la letra
+palabra = "";
+palabraConGuiones = [];
+
+// Función para llenar las vidas, se llena con 5 vidas en forma de img en el html
+function llenarVidas() {
+    const vidas = document.querySelector('#vidas');
+    vidas.innerHTML = '';
+    for (let i = 0; i < 5; i++) {
+        var imgVida = document.createElement("img");
+        imgVida.src = "../../img/vidas_horcado.png";
+        imgVida.className = 'vida'
+        imgVida.async = true;
+        vidas.appendChild(imgVida)
+    }
+}
+
+// Se ejecuta cuando el documento está cargado
+document.addEventListener("DOMContentLoaded", function () {
+    juegoHorcado();
+    llenarVidas();
+});
+
+// Se ejecuta cuando se presiona el botón de verificar, verifica si la letra ingresada está en la palabra
+document.querySelector('#verificar').addEventListener('click', () => {
+    const letra = document.querySelector('#letra').value;
     let letraEnPalabra = false;
-    //verifico que la letra este en la palabra secreta con un bucle For
-    for (let i = 0; i < palabra.length; i++){
-        if(letra == palabra[i]){
-            palabraConGuiones = palabraConGuiones.replaceAt(i*2 , letra);
+
+    // Recorre la palabra y si la letra ingresada está en la palabra, la agrega a la palabra con guiones
+    for (let i = 0; i < palabra.length; i++) {
+        if (letra == palabra[i]) {
+            palabraConGuiones[i] = palabra[i] === ' ' ? '&nbsp;&nbsp;' : palabra[i];
             letraEnPalabra = true;
         }
     }
+    // Si la letra no está en la palabra, se quita una vida. En el else, si la palabra con guiones es igual a la palabra, se muestra un alert de ganaste.
     if (!letraEnPalabra) {
-        const vidas = document.getElementById("vidas");
-        const numVidas = parseInt(vidas.textContent) - 1;
-        vidas.textContent = numVidas;
-        if (numVidas === 0) {
-          alert("Perdiste!");
+        const vidas = document.querySelector('#vidas');
+        const vida = vidas.querySelector('.vida');
+        if (vida) {
+            vidas.removeChild(vida);
         }
-    }else{
-        if (palabraConGuiones.indexOf('_') < 0) {
-            alert("Ganaste!")
+        if (!vidas.querySelector('.vida')) {
+            alert("Perdiste!");
+            reiniciarJuego();
+        }
+    } else {
+        const palabraSinEspacios = palabra.split(' ').join('&nbsp;&nbsp;');
+        if (palabraConGuiones.join('') === palabraSinEspacios) {
+            alert("Ganaste!");
+            juegoHorcado();
+            llenarVidas();
         }
     }
-    document.querySelector('#display').innerHTML = palabraConGuiones;
+    // Se muestra la palabra con guiones en el html
+    document.querySelector('#display').innerHTML = palabraConGuiones.join(' ');
+    // Se limpia el input de la letra
     document.querySelector('#letra').value = '';
 });
+
+// Se elije una palabra aleatoria del array de palabras
+function valoresJuego(numero) {
+    numero = numero || Math.floor(Math.random() * palabras_horcado.length);
+    palabra = palabras_horcado[numero];
+}
+
+// Se inicia el juego.
+function juegoHorcado() {
+    valoresJuego();
+    palabraConGuiones = palabra.split('').map(c => (c === ' ' ? '&nbsp;&nbsp;' : '_'));
+    document.querySelector('#display').innerHTML = palabraConGuiones.join(' ');
+    document.querySelector('#letra').focus();
+}
+
+// Se reinicia el juego
+function reiniciarJuego() {
+    juegoHorcado();
+    document.querySelector('#letra').value = '';
+    llenarVidas();
+}
+
+document.querySelector('#reiniciar').addEventListener('click', reiniciarJuego);
