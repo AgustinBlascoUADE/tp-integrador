@@ -21,7 +21,7 @@ function llenarVidas() {
     vidas.innerHTML = '';
     for (let i = 0; i < 5; i++) {
         var imgVida = document.createElement("img");
-        imgVida.src = "../../img/vidas_horcado.png";
+        imgVida.src = "../img/vidas_horcado.png";
         imgVida.className = 'vida'
         imgVida.async = true;
         vidas.appendChild(imgVida)
