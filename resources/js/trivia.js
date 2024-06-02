@@ -1,6 +1,7 @@
 //cargo en un arreglo las imganes de las señales viales. Este sera el orden que se mostrarán
+
 let señales = [
-  //señales preventivas - 9
+  //señales preventivas - 9                                                           //TD
   "curva-sinuosa.svg",
   "entronque.svg",
   "cruce.svg",
@@ -25,54 +26,104 @@ let señales = [
   "señales-de-recomendacion.svg",
 ];
 //arreglo que guardara la opcion correcta
-let correcta = [1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+let correcta = [
+  0,
+  1,
+  0,
+  2, //1
+
+  2,
+  0,
+  0,
+  2, //2
+
+  1,
+  0,
+  2,
+  0, //3
+
+  1,
+  1,
+  2,
+  0, //4
+
+  0,
+  2,
+  1,
+  0, //5
+];
 //arreglo que guardara las opciones a mostrar en cada jugada
 let opciones = [];
 //cargo en el arreglo opciones las opciones a mostrar en cada jugada
 
 //Señales preventivas - 9
-opciones.push(["curva", "curva sinuosa", "curva cerrada"]);
+/////////////////////////////////////////////////////////////////////////////////////////1
 opciones.push([
-  "entronque",
-  "entronque a la derecha",
-  "entronque a la izquierda",
+  "Curva sinuosa",
+  "Curva y contracurva derecha",
+  "Curva cerrada",
 ]);
-opciones.push(["cruce", "cruce a la derecha", "cruce a la izquierda"]);
-opciones.push(["glorieta", "glorieta a la derecha", "glorieta a la izquierda"]);
+opciones.push(["Entronque", "Bifurcación en T", "Entrecruce"]);
+opciones.push(["Cruce", "Cruce a la derecha", "Cruce a la izquierda"]);
+opciones.push(["Rotonda", "Glorieta a la derecha", "Glorieta"]);
+
+///////////////////////////////////////////////////////////////////////////////////////2
 opciones.push([
-  "incorporacion de transito",
-  "incorporacion a la derecha",
-  "incorporacion a la izquierda",
+  "Incorporacion de transito",
+  "Incorporacion a la derecha",
+  "Incorporacion a la izquierda",
 ]);
-opciones.push(["doble circulacion", "doble sentido", "carril central"]);
-opciones.push(["ganado", "vacas", "cruce de animales"]);
-opciones.push(["camino sinuoso", "curvas continuas", "curvas cerradas"]);
+opciones.push([
+  "Doble circulacion próxima",
+  "Doble sentido",
+  "Carriles centrales",
+]);
+opciones.push(["Cruce de ganado", "Vacas", "Cruce de animales"]);
+opciones.push(["Curvas cerradas", "Curvas continuas", "Carretera sinuosa"]);
 
-opciones.push(["salida", "salida a la derecha", "salida a la izquierda"]);
-
+/////////////////////////////////////////////////////////////////////////////////////////3
+opciones.push(["Salida", "Salida a la derecha", "Lateral a la derecha"]);
 //Señales restrictivas - 8
-opciones.push(["inspeccion", "camaras", "revision tecnica"]);
-opciones.push(["vuelta continua", "vuelta prohibida", "vuelta a la derecha"]);
-opciones.push(["sentido de circulacion", "carril", "carril de circulacion"]);
-opciones.push(["altura restringida", "puente", "tunel"]);
+opciones.push(["Puesto de inspeccion", "Vigilante", "Puesto de guardia"]);
 opciones.push([
-  "retorno prohibido",
-  "vuelta obligatoria",
-  "retorno a la derecha",
+  "Curva a la derecha",
+  "Vuelta prohibida a la derecha",
+  "Vuelta permitida a la derecha",
+]);
+opciones.push([
+  "Siga a la derecha",
+  "Incorporación derecha",
+  "Carril de circulacion",
 ]);
 
-opciones.push(["peso restringido", "carga", "carga maxima"]);
-opciones.push(["no parar", "no pasar", "no parquear"]);
+//////////////////////////////////////////////////////////////////////////////////////////4
+opciones.push(["Altura restringida", "Altura máxima", "Altura Próxima"]);
 opciones.push([
-  "prohibido seguir de frente",
-  "calle sin salida",
-  "calle cerrada",
+  "Retorno prohibido en U",
+  "Retorno no permitido",
+  "Evitar retorno",
 ]);
+opciones.push([
+  "Peso reservado máximo",
+  "Carga máxima",
+  "Peso total permitido",
+]);
+opciones.push(["Paso vial cerrado", "Prohibido pasar", "No seguir"]); ///cambiar imagen
 
+////////////////////////////////////////////////////////////////////////////////////////5
+opciones.push(["No seguir", "Calle sin salida", "Vía cerrada"]);
 //conjuntos - 3
-opciones.push(["señales de destino", "destino", "indicaciones"]);
-opciones.push(["señales de identificacion", "identificacion", "indicaciones"]);
-opciones.push(["señales de recomendacion", "recomendacion", "indicaciones"]);
+opciones.push(["Indicaciones", "Destinos próximos", "Señales de destino"]);
+opciones.push([
+  "Identificacion",
+  "Señales de identificacion",
+  "Indicaciones viales",
+]);
+opciones.push([
+  "Señales de regulación",
+  "Señales de recomendacion",
+  "Consejos viales",
+]); //TD
 
 //variable que guarda la posicion actual
 let posActual = 0;
@@ -99,7 +150,7 @@ function cargarBandera() {
     //limpiamos las clases que se asignaron
     limpiarOpciones();
 
-    document.getElementById("imgBandera").src = "img/" + señales[posActual];
+    document.getElementById("imgBandera").src = "/img/img_trivia/" + señales[posActual];
     document.getElementById("n0").innerHTML = opciones[posActual][0];
     document.getElementById("n1").innerHTML = opciones[posActual][1];
     document.getElementById("n2").innerHTML = opciones[posActual][2];
@@ -157,4 +208,25 @@ function volverAlInicio() {
   document.getElementById("pantalla-final").style.display = "none";
   document.getElementById("pantalla-inicial").style.display = "block";
   document.getElementById("pantalla-juego").style.display = "none";
+  document.getElementById("pantalla-respuestas").style.display = "none";
+}
+
+window.onload = function () {
+  volverAlInicio();
+};
+function volverAlInicio2() {
+  // Mostrar la pantalla de juego
+  document.getElementById("pantalla-juego").style.display = "block";
+  // Ocultar la pantalla final
+  document.getElementById("pantalla-final").style.display = "none";
+  // Mostrar la pantalla inicial
+  document.getElementById("pantalla-inicial").style.display = "block";
+}
+
+function HojaRespuestas() {
+  // Ocultar las pantallas y mostrar la pantalla de respuestas
+  document.getElementById("pantalla-final").style.display = "none";
+  document.getElementById("pantalla-inicial").style.display = "none";
+  document.getElementById("pantalla-juego").style.display = "none";
+  document.getElementById("pantalla-respuestas").style.display = "block";
 }
