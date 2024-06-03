@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Safe Road - Avances</title>
     <!-- Agrega las referencias a Bootstrap -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="resources/css/estilos_integrador.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -17,15 +18,13 @@
   <body>
     <!-- Agrega el código del navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="index.html">
         <img
+          class="logo-saferoad"
           src="img/safeRoad-logo.png"
-          width="90"
-          height="90"
           alt="SafeRoad Logo"
         />
-        Safe Road</a
-      >
+      </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -40,15 +39,15 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="../index.html"
+            <a class="nav-link" href="index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../integrantes.html">Integrantes</a>
+            <a class="nav-link" href="integrantes.html">Integrantes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../avances.html">Avances</a>
+            <a class="nav-link" href="avances.html">Avances</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="juegos/juegos.html">Juegos</a>
@@ -61,17 +60,10 @@
       <p>En esta sección se mostrarán los avances del proyecto</p>
     </main>
     <footer>
-      <style>
-        img {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      </style>
-      <img src="img/logouade.png" style="height: 10vh; width: 20vh;">
-      <p style="text-align: center;">
-        "Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
-        desarrollo Web - UADE - 2024"
+      <img class="logo-uade-footer" src="img/logouade.png" alt="Logo UADE" />
+      <p>
+        Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
+        desarrollo Web - UADE - 2024
       </p>
     </footer>
   </body>
