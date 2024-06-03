@@ -4,17 +4,20 @@
     align-content: space-evenly;
     align-items: center;
 }
+
 .imagenes img{
     border: 2px, solid, black;
     border-radius: 25px;
     height: 350px; 
     width: 250px;
 }
+
 .image-container {
     position: relative;
     width: 250px;
     height: 350px;
 }
+
 .image-container .after {
     position: absolute;
     top: 0;
@@ -24,7 +27,18 @@
     display: none;
     color: #FFF;
 }
+
 .image-container:hover .after {
     display: block;
     background: rgba(0, 0, 0, .6); opacity: 50%;
+}
+
+.logo-saferoad {
+    width: 100px;
+    height: 100px
+}
+
+.logo-uade-footer {
+    height: 10vh;
+    width: 17vh;
 }
