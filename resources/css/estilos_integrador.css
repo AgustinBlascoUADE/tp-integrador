@@ -42,3 +42,21 @@
     height: 10vh;
     width: 17vh;
 }
+
+footer {
+    background-color: #f8f9fa;
+}
+
+footer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer p {
+    text-align: center;
+    font-size: 9px;
+    margin-top: -0.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+}
