@@ -23,6 +23,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+      defer
+    ></script>
+    <script src="../resources/js/wordle.js" type="module" defer></script>
     <link rel="icon" type="image/x-icon" href="../img/safeRoad-logo.png" />
   </head>
   <body>
@@ -91,9 +102,11 @@
       <button id="btn-jugar">Empezar a Jugar!</button>
     </div>
 
-    <h1>Safe Road Wordle</h1>
+    <div class="titulo-juego">
+      <h1>Safe Road Wordle</h1>
+      <button id="btn-ayuda">&quest;</button>
+    </div>
 
-    <button id="btn-ayuda">&quest;</button>
     <div id="game-board"></div>
     <div id="keyboard-cont">
       <div class="first-row">
@@ -132,26 +145,12 @@
         <button class="keyboard-button">Enter</button>
       </div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="../resources/js/wordle.js" type="module"></script>
   </body>
   <footer>
-    <style>
-      img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
-    <img class="logo-uade-footer" src="../img/logouade.png" />
+    <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
     <p>
-      "Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
-      desarrollo Web - UADE - 2024"
+      Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
+      desarrollo Web - UADE - 2024
     </p>
   </footer>
 </html>
