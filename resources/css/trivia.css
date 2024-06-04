@@ -3,7 +3,7 @@ body{
     background-attachment: fixed;
     margin: 0;
 }
-h2{
+.nombre_inicio {
     width: fit-content;
     background-color: #e0e6f8;
     margin: 40px auto;
