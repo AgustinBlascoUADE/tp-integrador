@@ -5,6 +5,12 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
     text-align: left;
 }
 
+.navbar{
+    background-color: rgb(204, 203, 255);
+    padding: 0;
+    padding-left: 2.5%;
+    margin-bottom: 1%;
+}
 .parent{
     justify-content: space-evenly;
     justify-items: center;
@@ -42,7 +48,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 
 .logo-saferoad {
     width: 100px;
-    height: 100px
 }
 
 .logo-uade-footer {
