@@ -9,7 +9,7 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-main h1 {
+main h1, h3 {
     color: #007ea7;
     padding: 10px 0;
 }
