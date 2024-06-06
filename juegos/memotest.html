@@ -4,24 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safe Road - Juegos</title>
-    <!-- Agrega las referencias a Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../resources/css/estilos_integrador.css" />
-    <link rel="stylesheet" href="../resources/css/juegos.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/x-icon" href="../img/safeRoad-logo.png" />
+    <link type="text/css" href="../resources/css/memotest.css" rel="stylesheet" />
+    <script type="text/javascript" src="../resources/js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../resources/js/memotest.js"></script>   
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-    />
+    /> 
   </head>
-  <body>
-    <!-- Agrega el código del navbar -->
+  <body>    
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="../index.html">
         <img
@@ -55,62 +52,34 @@
             <a class="nav-link" href="../avances.html">Avances</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../juegos/juegos.html">Juegos</a>
+            <a class="nav-link" href="../juegos.html">Juegos</a>
           </li>
         </ul>
       </div>
     </nav>
-    <main>
-      <h1>Juegos</h1>
-      <p>Estos juegos te ayudaran a aprender mas sobre la Seguridad Vial!</p>
-      <ul>
-        <li>
-          <a href="signal-match.html">
-            <div class="juegos">
-              <img src="../img/juegos/signal-match.png" alt="Signal Match">
-              <p>Signal Match</p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="horcado.html">
-            <div class="juegos">
-              <img src="../img/juegos/horcado.png" alt="Horcado">
-              <p>Horcado</p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="wordle-seguridad-vial.html">
-            <div class="juegos">
-              <img src="../img/juegos/wordle.png" alt="Wordle">
-              <p>Wordle</p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="trivia.html">
-            <div class="juegos">
-              <img src="../img/juegos/trivia.jpg" alt="Trivia Seguridad Vial">
-              <p>Trivia Seguridad Vial</p>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="trivia.html">
-            <div class="juegos">
-              <img src="../img/juegos/trivia.jpg" alt="Trivia Seguridad Vial">
-              <p>juego-5</p>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </main>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $("#mesa").memotest('../img/memotest/blanco.png', new Array(
+          '../img/memotest/cruce.png',
+          '../img/memotest/doble.png',
+          '../img/memotest/estacion.png',
+          '../img/memotest/estacionamiento.png',
+          '../img/memotest/hospital.png',
+          '../img/memotest/paso.png',
+          '../img/memotest/reduccion.png',
+          '../img/memotest/sobrepasar.png',
+          '../img/memotest/telefono.png',
+          '../img/memotest/velocidad.png'
+            ));
+        });
+    </script>
+    <div id="mesa"></div>
+    <div class="clear"></div> 
     <footer>
       <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
       <p>
         Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
-        desarrollo Web - UADE - 2024
+        desarrollo Web - UADE - 2024      
       </p>
     </footer>
   </body>
