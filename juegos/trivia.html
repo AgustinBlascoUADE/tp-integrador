@@ -22,7 +22,7 @@
   <link rel="icon" href="\img\icono.png" type="image/png" />
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="../index.html">
         <img
           class="logo-saferoad"
@@ -55,7 +55,7 @@
             <a class="nav-link" href="../avances.html">Avances</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="juegos.html">Juegos</a>
+            <a class="nav-link" href="../juegos.html">Juegos</a>
           </li>
         </ul>
       </div>
@@ -64,23 +64,29 @@
     <h2 class="nombre_inicio">ADIVINA EL NOMBRE</h2>
 
     <!-- Pantalla inicial -->
-    <div id="pantalla-inicial">
-      <h4>¡Bienvenidos a nuestro juego sobre seguridad vial!</h4>
-      <h4>
-        En este juego, pondremos a prueba tus conocimientos sobre seguridad en
-        las carreteras y cómo podemos hacer que nuestras vías sean más seguras
-        para todos.
-      </h4>
-      <h4>
-        ¿Listo para comenzar? ¡Presiona el botón "COMENZAR A JUGAR" y demuestra
-        tus habilidades en seguridad vial!
-      </h4>
-      <button class="btn" onclick="comenzarJuego()">COMENZAR A JUGAR</button>
-    </div>
+  <div id="backdrop"></div>
+  <div id="instrucciones-modal">
+    <h3>Instrucciones</h3>
+    <h4>¡Bienvenidos a nuestro juego sobre seguridad vial!</h4>
+    <h4>
+      En este juego, pondremos a prueba tus conocimientos sobre seguridad en
+      las carreteras y cómo podemos hacer que nuestras vías sean más seguras
+      para todos. 
+    </h4>
+    <h4>
+      ¿Listo para comenzar? ¡Presiona el botón
+      "COMENZAR A JUGAR" y demuestra
+      tus habilidades en seguridad vial!
+    </h4>
+    <button id="btn-jugar">Empezar a Jugar!</button>
+  </div>
+  <div id="pantalla-inicial">    
+    <button class="btn" onclick="comenzarJuego()">COMENZAR A JUGAR</button>
+  </div>
 
     <!-- Pantalla juego -->
     <div class="pantalla-juego" id="pantalla-juego">
-      <img src="/img/" alt="" id="imgBandera" />
+      <img src="" alt="" id="imgBandera" />
       <div class="opciones">
         <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
           <div class="letra" id="l0">A</div>
@@ -105,7 +111,7 @@
       <button class="btn" onclick="volverAlInicio()">VOLVER AL INICIO</button>
     </div>
 
-    <script src="/resources/js/trivia.js"></script>
+    <script src="../resources/js/trivia.js"></script>
 
     <footer>
       <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />

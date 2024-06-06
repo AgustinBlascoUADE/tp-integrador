@@ -150,7 +150,7 @@ function cargarBandera() {
     //limpiamos las clases que se asignaron
     limpiarOpciones();
 
-    document.getElementById("imgBandera").src = "/img/img_trivia/" + señales[posActual];
+    document.getElementById("imgBandera").src = "img/imgpng_trivia/" + señales[posActual];
     document.getElementById("n0").innerHTML = opciones[posActual][0];
     document.getElementById("n1").innerHTML = opciones[posActual][1];
     document.getElementById("n2").innerHTML = opciones[posActual][2];
@@ -229,4 +229,28 @@ function HojaRespuestas() {
   document.getElementById("pantalla-inicial").style.display = "none";
   document.getElementById("pantalla-juego").style.display = "none";
   document.getElementById("pantalla-respuestas").style.display = "block";
+}
+
+// Instrucciones
+
+const botonJugar = document.getElementById("btn-jugar");
+const modalInstrucciones = document.getElementById("instrucciones-modal");
+const botonAyuda = document.getElementById("btn-ayuda");
+const backdrop = document.getElementById("backdrop")
+
+botonJugar.onclick = function() {
+    modalInstrucciones.style.display = "none";
+    backdrop.style.display = "none";
+}
+
+botonAyuda.onclick = function() {
+    modalInstrucciones.style.display = "grid";
+    backdrop.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == backdrop) {
+        modalInstrucciones.style.display = "none";
+        backdrop.style.display = "none";
+    }
 }

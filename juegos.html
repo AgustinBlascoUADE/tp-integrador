@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Safe Road - Juegos</title>
     <!-- Agrega las referencias a Bootstrap -->
@@ -9,7 +9,8 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="../resources/css/estilos_integrador.css" />
+    <link rel="stylesheet" href="resources/css/estilos_integrador.css" />
+    <link rel="stylesheet" href="resources/css/juegos.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -21,11 +22,11 @@
   </head>
   <body>
     <!-- Agrega el código del navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="../index.html">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">
         <img
           class="logo-saferoad"
-          src="../img/safeRoad-logo.png"
+          src="img/safeRoad-logo.png"
           alt="SafeRoad Logo"
         />
       </a>
@@ -43,39 +44,74 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="../index.html"
+            <a class="nav-link" href="index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../integrantes.html">Integrantes</a>
+            <a class="nav-link" href="integrantes.html">Integrantes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../avances.html">Avances</a>
+            <a class="nav-link" href="avances.html">Avances</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../juegos/juegos.html">Juegos</a>
+            <a class="nav-link" href="juegos.html">Juegos</a>
           </li>
         </ul>
       </div>
     </nav>
     <main>
       <h1>Juegos</h1>
-      <p>En esta sección se mostrarán los juegos del proyecto</p>
+      <p>Estos juegos te ayudaran a aprender mas sobre la Seguridad Vial!</p>
       <ul>
-        <li><a href="signal-match.html">Signal Match</a></li>
-        <li><a href="horcado.html">Horcado</a></li>
-        <li><a href="wordle-seguridad-vial.html">Wordle</a></li>
-        <li><a href="trivia.html">Trivia Seguridad Vial</a></li>
-        <li><a href="../memotest.html">Memotest</a></li>
+        <li>
+          <a href="juegos/signal-match.html">
+            <div class="juegos">
+              <img src="img/juegos/signal-match.png" alt="Signal Match">
+              <p>Signal Match</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="juegos/horcado.html">
+            <div class="juegos">
+              <img src="img/juegos/horcado.png" alt="Horcado">
+              <p>Horcado</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="juegos/wordle-seguridad-vial.html">
+            <div class="juegos">
+              <img src="img/juegos/wordle.png" alt="Wordle">
+              <p>Wordle</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="juegos/trivia.html">
+            <div class="juegos">
+              <img src="img/trivia.png" alt="Trivia Seguridad Vial">
+              <p>Trivia</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="juegos/memotest.html">
+            <div class="juegos">
+              <img src="img/juegos/memotest.png" alt="Memotest">
+              <p>Memotest</p>
+            </div>
+          </a>
+        </li>
       </ul>
     </main>
     <footer>
-      <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
+      <img class="logo-uade-footer" src="img/logouade.png" alt="Logo UADE" />
       <p>
         Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
         desarrollo Web - UADE - 2024
-      </p>        
+      </p>
     </footer>
   </body>
 </html>

@@ -1,0 +1,22 @@
+main{
+    margin-left: 5%;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Ajusta según tus necesidades */
+  text-align: center;
+}
+
+/* Estilos para los encabezados */
+main h1 {
+  font-size: 2.5rem; /* Tamaño del texto */
+  margin-bottom: 1rem; /* Espacio inferior */
+  color: #333; /* Color del texto */
+}
+
+main h2 {
+  font-size: 2rem; /* Tamaño del texto */
+  margin-bottom: 0.5rem; /* Espacio inferior */
+  color: #555; /* Color del texto */
+}

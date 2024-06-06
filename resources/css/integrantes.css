@@ -1,0 +1,11 @@
+.parent div p {
+    text-align: center;
+    margin-top: 5px;
+}
+
+main h1 {
+    text-align: center;
+    margin: 20px;
+    color: #007ea7;
+    padding: 10px 0;
+}
