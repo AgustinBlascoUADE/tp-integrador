@@ -1,3 +1,8 @@
+body h1, h3 {
+    color: #003459;
+    padding: 10px 0;
+}
+
 #vidas img {
     height: 50px;
     width: auto;
@@ -41,4 +46,78 @@
     #botones-horcado {
         margin: 20px;
     }
+}
+
+#backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black */
+    z-index: 999;
+    /* Higher than normal content but lower than the modal */
+}
+
+#instrucciones-modal {
+    position: fixed;
+    background-color: #fefefe;
+    padding: 2rem;
+    padding-top: 1.2rem;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    /* Add this line */
+    display: grid;
+    z-index: 1000;
+    right: 5%;
+    left: 5%;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 116px;
+        opacity: 1
+    }
+}
+
+#instrucciones-modal h2 {
+    text-align: center;
+}
+
+#instrucciones-modal li {
+    list-style: circle;
+    padding-bottom: 0.125rem;
+}
+
+.titulo-juego {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+
+.titulo-juego h1 {
+    margin-bottom: 0;
+}
+
+.titulo-juego button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid black;
+}
+
+.titulo-juego button:hover {
+    border: 2px solid black;
+    background-color: black;
+    color: white;
 }
