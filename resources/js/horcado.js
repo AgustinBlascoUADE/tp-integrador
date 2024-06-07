@@ -93,3 +93,27 @@ function reiniciarJuego() {
 }
 
 document.querySelector('#reiniciar').addEventListener('click', reiniciarJuego);
+
+// Instrucciones
+
+const botonJugar = document.getElementById("btn-jugar");
+const modalInstrucciones = document.getElementById("instrucciones-modal");
+const botonAyuda = document.getElementById("btn-ayuda");
+const backdrop = document.getElementById("backdrop")
+
+botonJugar.onclick = function() {
+    modalInstrucciones.style.display = "none";
+    backdrop.style.display = "none";
+}
+
+botonAyuda.onclick = function() {
+    modalInstrucciones.style.display = "grid";
+    backdrop.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == backdrop) {
+        modalInstrucciones.style.display = "none";
+        backdrop.style.display = "none";
+    }
+}
