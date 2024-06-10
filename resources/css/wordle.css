@@ -58,12 +58,19 @@ h1 {
 
 #backdrop {
   position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.7); /* Semi-transparent black */
-  z-index: 999; /* Higher than normal content but lower than the modal */
+  background-color: rgba(0,0,0,0.75);
+  z-index: 999;
+  pointer-events: none;
+  display: none;
+}
+
+#backdrop.visible {
+  display: block;
+  pointer-events: all;
 }
 
 #instrucciones-modal {
@@ -75,11 +82,38 @@ h1 {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: animatetop;
   animation-duration: 1s;
-  animation-fill-mode: forwards; /* Add this line */
+  animation-fill-mode: forwards;
   display: grid;
   z-index: 1000;
   right: 5%;
   left: 5%;
+  border-radius: 0.5rem;
+}
+
+#instrucciones-modal.invisible {
+  display: none;
+}
+
+#modal-mensaje {
+  position: fixed;
+  background-color: #fefefe;
+  padding: 2rem;
+  padding-top: 1.2rem;
+  border: 1px solid #888;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; 
+  display: grid;
+  z-index: 1000;
+  right: 5%;
+  left: 5%;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+#modal-mensaje.visible {
+  display: grid;
 }
 
 @keyframes animatetop {
@@ -89,11 +123,23 @@ h1 {
 
 #instrucciones-modal h2 {
   text-align: center;
+  color: #007ea7;
+  padding-bottom: 0.625rem;
 }
 
 #instrucciones-modal li {
-  list-style: circle;
+  list-style: url('../../img/car-front-fill.svg');
   padding-bottom: 0.125rem;
+  margin: 0 1.25rem;
+}
+
+#instrucciones-modal ul {
+  padding: 1.25rem 0;
+}
+
+#btn-jugar {
+  border-radius: 0.5rem;
+  border: 2px solid black;
 }
 
 .verde {
@@ -127,13 +173,15 @@ h1 {
 
 .titulo-juego {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 1rem;
 }
 
 .titulo-juego h1 {
   margin-bottom: 0;
+  color: #007ea7;
+  text-align: center;
 }
 
 .titulo-juego button {
@@ -141,6 +189,7 @@ h1 {
   width: 2rem;
   border-radius: 0.5rem;
   border: 2px solid black;
+  margin-left: 1.25rem;
 }
 
 .titulo-juego button:hover {
