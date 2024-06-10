@@ -150,7 +150,7 @@ function cargarBandera() {
     //limpiamos las clases que se asignaron
     limpiarOpciones();
 
-    document.getElementById("imgBandera").src = "img/imgpng_trivia/" + señales[posActual];
+    document.getElementById("imgBandera").src = "../img/img_trivia/" + señales[posActual];
     document.getElementById("n0").innerHTML = opciones[posActual][0];
     document.getElementById("n1").innerHTML = opciones[posActual][1];
     document.getElementById("n2").innerHTML = opciones[posActual][2];
