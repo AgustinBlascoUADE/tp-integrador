@@ -11,7 +11,7 @@
 #mesa .memotest_cartas {
     list-style: none;
     float: left;
-    margin: 0px 20px 20px 0px;
+    margin: 20px 20px 20px 20px;
     border: solid 1px #999;
     width: 100px;
     height: 60px;
@@ -20,6 +20,7 @@
 }
 #mesa .memotest_fin_juego {
     font-size: 16px;
+    text-align: center;
 }
 #mesa .memotest_jugar_de_nuevo {
     text-decoration: none;
