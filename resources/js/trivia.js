@@ -129,7 +129,7 @@ opciones.push([
 let posActual = 0;
 //variable que guarda la cantidad acertadas hasta el moemento
 let cantidadAcertadas = 0;
-
+let juegoEmpezado = false;
 function comenzarJuego() {
   //reseteamos las variables
   posActual = 0;
@@ -138,6 +138,7 @@ function comenzarJuego() {
   document.getElementById("pantalla-inicial").style.display = "none";
   document.getElementById("pantalla-juego").style.display = "block";
   cargarBandera();
+  juegoEmpezado = true;
 }
 
 //funcion que carga la siguiente imagen y sus opciones
@@ -238,19 +239,39 @@ const modalInstrucciones = document.getElementById("instrucciones-modal");
 const botonAyuda = document.getElementById("btn-ayuda");
 const backdrop = document.getElementById("backdrop")
 
+const toggleBackdrop = () => {
+  backdrop.classList.toggle("visible")
+}
+
+const mostrarInstrucciones = () => {
+  modalInstrucciones.classList.remove("invisible");
+}
+
+const ocultarInstrucciones = () => {
+  modalInstrucciones.classList.add("invisible");
+}
+
 botonJugar.onclick = function() {
-    modalInstrucciones.style.display = "none";
-    backdrop.style.display = "none";
+    ocultarInstrucciones();
+    toggleBackdrop();
+    if (!juegoEmpezado) {
+      comenzarJuego();
+    }
 }
 
 botonAyuda.onclick = function() {
-    modalInstrucciones.style.display = "grid";
-    backdrop.style.display = "block";
+    mostrarInstrucciones();
+    toggleBackdrop();
 }
 
 window.onclick = function(event) {
     if (event.target == backdrop) {
-        modalInstrucciones.style.display = "none";
-        backdrop.style.display = "none";
+      ocultarInstrucciones();
+      toggleBackdrop();
+      if (!juegoEmpezado) {
+        comenzarJuego();
+      }
     }
 }
+
+toggleBackdrop();

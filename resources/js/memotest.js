@@ -142,3 +142,44 @@ jQuery.fn.memotest = function(_carta_oculta, _cartas) {
     };
     return this.iniciar();
 };
+
+// Instrucciones
+
+const botonJugar = document.getElementById("btn-jugar");
+const modalInstrucciones = document.getElementById("instrucciones-modal");
+const botonAyuda = document.getElementById("btn-ayuda");
+const backdrop = document.getElementById("backdrop")
+
+const toggleBackdrop = () => {
+  backdrop.classList.toggle("visible")
+}
+
+const mostrarInstrucciones = () => {
+  modalInstrucciones.classList.remove("invisible");
+}
+
+const ocultarInstrucciones = () => {
+  modalInstrucciones.classList.add("invisible");
+}
+
+botonJugar.onclick = function() {
+    ocultarInstrucciones();
+    toggleBackdrop();
+    if (!juegoEmpezado) {
+      comenzarJuego();
+    }
+}
+
+botonAyuda.onclick = function() {
+    mostrarInstrucciones();
+    toggleBackdrop();
+}
+
+window.onclick = function(event) {
+    if (event.target == backdrop) {
+      ocultarInstrucciones();
+      toggleBackdrop();
+    }
+}
+
+toggleBackdrop();

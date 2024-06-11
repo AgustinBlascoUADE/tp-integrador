@@ -8,8 +8,6 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="../resources/css/trivia.css" />
-    <link rel="stylesheet" href="../resources/css/estilos_integrador.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -18,8 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="\img\icono.png" type="image/png" />
+    <link rel="stylesheet" href="../resources/css/estilos_integrador.css" />
+    <link rel="stylesheet" href="../resources/css/trivia.css" />
+    <script src="../resources/js/trivia.js" defer></script>
   </head>
-  <link rel="icon" href="\img\icono.png" type="image/png" />
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -61,57 +62,62 @@
       </div>
     </nav>
 
-    <h2 class="nombre_inicio">ADIVINA EL NOMBRE</h2>
-
     <!-- Pantalla inicial -->
     <div id="backdrop"></div>
     <div id="instrucciones-modal">
-      <h3>Instrucciones</h3>
-      <h4>¡Bienvenidos a nuestro juego sobre seguridad vial!</h4>
-      <h4>
-        En este juego, pondremos a prueba tus conocimientos sobre seguridad en
-        las carreteras y cómo podemos hacer que nuestras vías sean más seguras
-        para todos.
-      </h4>
-      <h4>
-        ¿Listo para comenzar? ¡Presiona el botón "COMENZAR A JUGAR" y demuestra
-        tus habilidades en seguridad vial!
-      </h4>
+      <h2>Instrucciones</h2>
+      <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
+      <ul>
+        <li>
+          En este juego, pondremos a prueba tus conocimientos sobre seguridad en
+          las carreteras y cómo podemos hacer que nuestras vías sean más seguras
+          para todos.
+        </li>
+        <li>
+          ¿Listo para comenzar? ¡Presiona el botón "Empeza a Jugar" y demuestra
+          tus habilidades en seguridad vial!
+        </li>
+      </ul>
       <button id="btn-jugar">Empezar a Jugar!</button>
     </div>
-    <div id="pantalla-inicial">
-      <button class="btn" onclick="comenzarJuego()">COMENZAR A JUGAR</button>
-    </div>
 
-    <!-- Pantalla juego -->
-    <div class="pantalla-juego" id="pantalla-juego">
-      <img src="" alt="" id="imgBandera" />
-      <div class="opciones">
-        <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
-          <div class="letra" id="l0">A</div>
-          <div class="nombre" id="n0">OPCION A</div>
-        </div>
-        <div class="opcion" id="op1" onclick="comprobarRespuesta(1)">
-          <div class="letra" id="l1">B</div>
-          <div class="nombre" id="n1">OPCION B</div>
-        </div>
-        <div class="opcion" id="op2" onclick="comprobarRespuesta(2)">
-          <div class="letra" id="l2">C</div>
-          <div class="nombre" id="n2">OPCION C</div>
+    <div class="tablero-juego">
+      <div class="titulo-juego">
+        <h1>Adivina el Nombre</h1>
+        <button id="btn-ayuda">&quest;</button>
+      </div>
+
+      <div id="pantalla-inicial">
+        <!-- <button class="btn" onclick="comenzarJuego()">COMENZAR A JUGAR</button> -->
+      </div>
+
+      <!-- Pantalla juego -->
+      <div class="pantalla-juego" id="pantalla-juego">
+        <img src="" alt="" id="imgBandera" />
+        <div class="opciones">
+          <div class="opcion" id="op0" onclick="comprobarRespuesta(0)">
+            <div class="letra" id="l0">A</div>
+            <div class="nombre" id="n0">OPCION A</div>
+          </div>
+          <div class="opcion" id="op1" onclick="comprobarRespuesta(1)">
+            <div class="letra" id="l1">B</div>
+            <div class="nombre" id="n1">OPCION B</div>
+          </div>
+          <div class="opcion" id="op2" onclick="comprobarRespuesta(2)">
+            <div class="letra" id="l2">C</div>
+            <div class="nombre" id="n2">OPCION C</div>
+          </div>
         </div>
       </div>
+      <!-- Pantalla final -->
+      <div id="pantalla-final">
+        <h2>CORRECTAS: <span id="numCorrectas">3</span></h2>
+        <h2>
+          INCORRECTAS: <span class="incorrectas" id="numIncorrectas">2</span>
+        </h2>
+        <button class="btn" onclick="volverAlInicio()">VOLVER AL INICIO</button>
+      </div>
     </div>
-    <!-- Pantalla final -->
-    <div id="pantalla-final">
-      <h2>CORRECTAS: <span id="numCorrectas">3</span></h2>
-      <h2>
-        INCORRECTAS: <span class="incorrectas" id="numIncorrectas">2</span>
-      </h2>
-      <button class="btn" onclick="volverAlInicio()">VOLVER AL INICIO</button>
-    </div>
-
-    <script src="../resources/js/trivia.js"></script>
-
     <footer>
       <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
       <p>

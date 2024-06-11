@@ -101,19 +101,33 @@ const modalInstrucciones = document.getElementById("instrucciones-modal");
 const botonAyuda = document.getElementById("btn-ayuda");
 const backdrop = document.getElementById("backdrop")
 
+const toggleBackdrop = () => {
+    backdrop.classList.toggle("visible")
+}
+
+const ocultarInstrucciones = () => {
+    modalInstrucciones.classList.add("invisible");
+}
+
+const mostrarInstrucciones = () => {
+    modalInstrucciones.classList.remove("invisible");
+}
+
 botonJugar.onclick = function() {
-    modalInstrucciones.style.display = "none";
-    backdrop.style.display = "none";
+    ocultarInstrucciones();
+    toggleBackdrop();
 }
 
 botonAyuda.onclick = function() {
-    modalInstrucciones.style.display = "grid";
-    backdrop.style.display = "block";
+    mostrarInstrucciones();
+    toggleBackdrop();
 }
 
 window.onclick = function(event) {
     if (event.target == backdrop) {
-        modalInstrucciones.style.display = "none";
-        backdrop.style.display = "none";
+        toggleBackdrop();
+        ocultarInstrucciones();
     }
 }
+
+toggleBackdrop();

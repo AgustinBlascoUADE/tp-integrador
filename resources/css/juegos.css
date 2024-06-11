@@ -1,47 +1,53 @@
-main{
+.links-juegos {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
 }
-main ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-main li{
+
+main li {
     list-style-type: none;
     padding: .5%;
 
 }
-p{
+
+.subtitulo {
+    text-align: center;
     padding: 1%;
 }
-a{
-    text-decoration: none;
-    color: black;
 
-}
-a, a:hover {
+a {
     text-decoration: none;
     color: black;
-  }
+}
+
+a:link, a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 .juegos{
+    flex: 1 0 30%;
     display: flex; 
-    justify-content:space-evenly;
+    justify-content:space-between;
+    width: 20rem;
     align-items: center;
     border: 2px solid rgb(104, 104, 104);
     border-radius: 25px;
     padding: 10px;
+    margin: 0.25rem 0;
 }
+
 .juegos:hover {
     background-color: #cacaca; 
 }
+
 .juegos p{
     padding: 5%;
     width: 200px;
 }
+
 .juegos img{
     border-radius: 5%;
     height: 100px;
-
 }
