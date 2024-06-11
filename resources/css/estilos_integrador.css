@@ -6,7 +6,8 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .navbar{
-    background-color: #00a8e8;
+    background: rgb(0,52,89);
+    background: linear-gradient(0deg, rgba(0,168,232,1) 0%, rgba(0,52,89,1)  100%);  
     padding: 0;
     padding-left: 2.5%;
     margin-bottom: 1%;
