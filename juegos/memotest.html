@@ -22,7 +22,11 @@
       type="text/javascript"
       src="../resources/js/jquery-1.7.2.js"
     ></script>
-    <script type="text/javascript" src="../resources/js/memotest.js"></script>
+    <script
+      type="text/javascript"
+      src="../resources/js/memotest.js"
+      defer
+    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -67,27 +71,47 @@
         </ul>
       </div>
     </nav>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#mesa').memotest(
-          '../img/memotest/blanco.png',
-          new Array(
-            '../img/memotest/cruce.png',
-            '../img/memotest/doble.png',
-            '../img/memotest/estacion.png',
-            '../img/memotest/estacionamiento.png',
-            '../img/memotest/hospital.png',
-            '../img/memotest/paso.png',
-            '../img/memotest/reduccion.png',
-            '../img/memotest/sobrepasar.png',
-            '../img/memotest/telefono.png',
-            '../img/memotest/velocidad.png'
-          )
-        );
-      });
-    </script>
-    <div id="mesa"></div>
-    <div class="clear"></div>
+
+    <div id="backdrop"></div>
+    <div id="instrucciones-modal">
+      <h2>Instrucciones</h2>
+      <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
+      <ul>
+        <li>
+          El objetivo del juego es encontrar el par de imagenes iguales en el
+          menor tiempo posible.
+        </li>
+      </ul>
+      <button id="btn-jugar">Empezar a Jugar!</button>
+    </div>
+    <div class="tablero-juego">
+      <div class="titulo-juego">
+        <h1>Memotest</h1>
+        <button id="btn-ayuda">&quest;</button>
+      </div>
+
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $('#mesa').memotest(
+            '../img/memotest/blanco.png',
+            new Array(
+              '../img/memotest/cruce.png',
+              '../img/memotest/doble.png',
+              '../img/memotest/estacion.png',
+              '../img/memotest/estacionamiento.png',
+              '../img/memotest/hospital.png',
+              '../img/memotest/paso.png',
+              '../img/memotest/reduccion.png',
+              '../img/memotest/sobrepasar.png',
+              '../img/memotest/telefono.png',
+              '../img/memotest/velocidad.png'
+            )
+          );
+        });
+      </script>
+      <div id="mesa"></div>
+      <div class="clear"></div>
+    </div>
     <footer>
       <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
       <p>

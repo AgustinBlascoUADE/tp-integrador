@@ -1,15 +1,7 @@
-body{
+body {
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
-}
-.nombre_inicio {
-    width: fit-content;
-    background-color: #e0e6f8;
-    margin: 40px auto;
-    border-radius: 60px;
-    box-shadow: 5px 5px 0 #5b5766;
-    padding: 20px 30px;
 }
 
 /* PANTALLA INICIO */
@@ -34,57 +26,6 @@ body{
 .btn:hover{
     transform: scale(1.1);
 }
-
-/* PANTALLA juego */
-
-#backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0,0,0,0.7); /* Semi-transparent black */
-    z-index: 999; /* Higher than normal content but lower than the modal */
-  }
-  
-  #instrucciones-modal {
-    position: fixed;
-    background-color: #fefefe;
-    padding: 2rem;
-    padding-top: 1.2rem;
-    border: 1px solid #888;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    animation-name: animatetop;
-    animation-duration: 1s;
-    display: grid;
-    z-index: 1000;
-    right: 5%;
-    left: 5%;
-  }
-  @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 116px; opacity: 1}
-  }
-  
-  #instrucciones-modal h2 {
-    text-align: center;
-  }
-  
-  #instrucciones-modal li {
-    list-style: circle;
-    padding-bottom: 0.125rem;
-  }
-  
-  .verde {
-    color: green;
-    font-weight: bold;
-  }
-  
-  .boton-instrucciones {
-    border-radius: 0.625rem;
-    padding: 0.625rem;
-    display: inline;
-  }
 
 #pantalla-juego{
     display: none;

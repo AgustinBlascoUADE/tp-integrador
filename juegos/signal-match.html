@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="../resources/js/signal-match.js" defer></script>
   </head>
   <body>
     <!-- Agrega el código del navbar -->
@@ -61,20 +62,33 @@
       </div>
     </nav>
     <main>
-      <h1>Signal Match</h1>
-      <p>
-        Matchea todas las imagenes que correspondan a el tipo de señal de
-        transito
-      </p>
-      <div id="contenedorJuego">
-        <div id="contenedorTexto"></div>
-        <div id="contenedorFotos">
-          <!-- Las imágenes se agregarán aquí -->
+      <div class="tablero-juego">
+        <div class="titulo-juego">
+          <h1>Signal Match</h1>
+          <button id="btn-ayuda">&quest;</button>
         </div>
-        <div id="contenedorBoton">
-          <button id="boton" type="button" class="btn btn-primary">
-            Confirmar
-          </button>
+        <div id="backdrop"></div>
+        <div id="instrucciones-modal">
+          <h2>Instrucciones</h2>
+          <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
+          <ul>
+            <li>
+              Matchea todas las imagenes que correspondan a el tipo de señal de
+              transito
+            </li>
+          </ul>
+          <button id="btn-jugar">Empezar a Jugar!</button>
+        </div>
+        <div id="contenedorJuego">
+          <div id="contenedorTexto"></div>
+          <div id="contenedorFotos">
+            <!-- Las imágenes se agregarán aquí -->
+          </div>
+          <div id="contenedorBoton">
+            <button id="boton" type="button" class="btn btn-primary">
+              Confirmar
+            </button>
+          </div>
         </div>
       </div>
     </main>
@@ -85,7 +99,6 @@
         desarrollo Web - UADE - 2024
       </p>
     </footer>
-    <script src="../resources/js/signal-match.js"></script>
     <script>
       window.addEventListener('DOMContentLoaded', (event) => {
         mostrarFotos();
