@@ -15,9 +15,16 @@ body main h1, h4 {
     padding: 10px 0;
 }
 
+body main .sub-heading{
+    margin-top: 20px;
+    color: #00a8e8;
+    padding: 10px 0;
+}
+
 main h5 {
     padding: 10px 0;
     margin-top: 10px;
+    color: #003459;
 }
 
 main p {
