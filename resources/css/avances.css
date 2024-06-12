@@ -9,9 +9,15 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-main h1, h3 {
+body main h1, h4 {
+    margin-top: 20px;
     color: #00a8e8;
     padding: 10px 0;
+}
+
+main h5 {
+    padding: 10px 0;
+    margin-top: 10px;
 }
 
 main p {
@@ -36,4 +42,96 @@ main ul li a {
 
 main ul li a:hover {
     text-decoration: underline;
+}
+
+#image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.link_imagen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px; /* adjust as needed */
+}
+
+.link_imagen img {
+    width: 190px;
+    height: 142px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 25px;
+}
+
+@media screen and (max-width: 800px) {
+    #image-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .link_imagen img {
+        width: 100%;
+        height: auto;
+        margin-inline: auto;
+    }
+    
+}
+
+.caja-colores {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.clase-colores {
+    height: 120px;
+    width: 120px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+#color1{
+    background-color: #003459;
+}
+
+#color2{
+    background-color: #007ea7;
+}
+
+#color3{
+    background-color: #00a8e8;
+}
+
+@media (max-width: 1130px) {
+    .clase-colores {
+        height: 100px !important;
+        width: 100px !important;
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 1130px) {
+    .caja-colores {
+        width: 400px !important;
+        margin-inline: auto;
+    }
+}
+
+.imagen-publico{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-inline: auto;
 }
