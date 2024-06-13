@@ -10,9 +10,7 @@
     width: 100%;
 }
 
-#contenedorTexto p {
-    font-weight: bold;
-}
+
 
 #contenedorFotos { 
     display: flex;

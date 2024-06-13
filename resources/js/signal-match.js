@@ -99,9 +99,21 @@ function mostrarFotos() {
   let contenedorTexto = document.getElementById("contenedorTexto");
   let contenedorFotos = document.getElementById("contenedorFotos");
   let text = document.createElement("p");
+  let info = document.createElement("p"); 
 
   text.innerText = `Selecciona las ${tematica}`;
+  text.style.fontWeight = 'bold';
+  if (tematica === "señales informativas") {
+    info.innerText = "Las señales de tránsito informativas tienen el objetivo de guiar al usuario \n en su camino en torno a la ubicación de servicios de emergencia, atractivos turísticos, kilometrajes y recomendaciones al viajar.";
+  }
+  else if (tematica === "señales preventivas") {
+    info.innerText = "Son las señales de color amarillo con negro que tienen el objetivo de \n prevenir a los conductores sobre algún peligro o cambio en el camino.";
+  }
+  else {
+    info.innerText = "Las señales de tránsito restrictivas advierten sobre restricciones físicas \n o reglamentarias en la circulación. Normalmente son de color rojo y están colocadas en postes tanto en zonas urbanas como rurales.";
+  }
   contenedorTexto.appendChild(text);
+  contenedorTexto.appendChild(info);
 
   mezclarFotos.forEach((foto) => {
     let img = document.createElement("img");
