@@ -32,6 +32,7 @@ export const PALABRAS_ESP = [
     'agilmente',
     'agora',
     'aguila',
+    'airbag',
     'al',
     'alabe',
     'alaga',
@@ -86062,9 +86063,49 @@ export const PALABRAS_ESP = [
     'zuzon'
 ]
 
-export const PALABRAS_JUEGO = [
-    'freno',
-    'cinturon',
-    'motor',
-    'guiño'
+export const PALABRAS_JUEGOS_EXPLICACION = [
+    {
+        'key': 'freno',
+        'explicacion': 'Utiliza el freno correctamente para evitar accidentes y garantizar tu seguridad y la de otros en la carretera.'
+    },
+    {
+        'key': 'cinturon',
+        'explicacion': 'Abróchate siempre el cinturón de seguridad, independientemente de la duración del viaje, para maximizar tus posibilidades de supervivencia en caso de accidente.'
+    },
+    {
+        'key': 'motor',
+        'explicacion': 'Conduce con cuidado y mantén tu motor en óptimas condiciones para asegurar una viaje seguro y eficiente.'
+    },
+    {
+        'key': 'guiño',
+        'explicacion': 'Usa el guiño correctamente para indicar cambios de carril o giros, evitando confusiones y asegurando la seguridad en la carretera.'
+    },
+    {
+        'key': 'rueda',
+        'explicacion': 'Inspecciona regularmente las ruedas de tu vehículo para asegurar una conducción segura y evitar problemas en la carretera.'
+    },
+    {
+        'key': 'señal',
+        'explicacion': 'Respetar las señales de tránsito es fundamental para garantizar la seguridad en la vía, evitando así accidentes y protegiendo a todos los usuarios de la carretera.'
+    },
+    {
+        'key': 'carril',
+        'explicacion': 'Respetar siempre el carril asignado es esencial para mantener la seguridad en la carretera, evitando colisiones y garantizando un flujo de tráfico ordenado.'
+    },
+    {
+        'key': 'animal',
+        'explicacion': 'Permanece alerta y reduce la velocidad en zonas donde puedan cruzar animales para evitar accidentes.'
+    },
+    {
+        'key': 'casco',
+        'explicacion': 'El uso del casco es obligatorio y vital para proteger la cabeza durante accidentes, actuando como una barrera contra impactos y diseminando la fuerza de manera efectiva para prevenir lesiones graves.'
+    },
+    {
+        'key': 'celular',
+        'explicacion': 'Asegúrate de no utilizar el celular mientras conduces, ya que incluso una breve distracción puede multiplicar por cuatro el riesgo de accidentes.'
+    },
+    {
+        'key': 'airbag',
+        'explicacion': 'Los airbags actúan como un amortiguador de alta velocidad, inflándose rápidamente para proteger la cabeza y otras partes del cuerpo del pasajero en caso de un accidente, reduciendo así el riesgo de lesiones graves.'
+    }
 ]

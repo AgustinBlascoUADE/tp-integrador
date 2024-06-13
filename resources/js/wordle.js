@@ -1,4 +1,4 @@
-import { PALABRAS_ESP, PALABRAS_JUEGO } from "./palabras-wordle.js";
+import { PALABRAS_ESP, PALABRAS_JUEGOS_EXPLICACION } from "./palabras-wordle.js";
 
 const INTENTOS = 6;
 let adivinanzaActual = [];
@@ -16,8 +16,9 @@ const mezlcarPalabras = (arrayPalabras) => {
     return array;
 };
 
-const palabrasParaAdivinar = mezlcarPalabras(PALABRAS_JUEGO);
-let palabraParaAdivinar = palabrasParaAdivinar[contador];
+const palabrasParaAdivinar = mezlcarPalabras(PALABRAS_JUEGOS_EXPLICACION);
+let palabraParaAdivinar = palabrasParaAdivinar[contador]['key'];
+let explicacionPalabra = palabrasParaAdivinar[contador]['explicacion'];
 
 // Instrucciones
 
@@ -26,6 +27,9 @@ const modalInstrucciones = document.getElementById("instrucciones-modal");
 const botonAyuda = document.getElementById("btn-ayuda");
 const backdrop = document.getElementById("backdrop")
 const modalMensajes = document.getElementById("modal-mensaje");
+const tituloModalMensaje = document.getElementById("titulo-mensaje");
+const complementarioModalMensaje = document.getElementById("complementario");
+const imagenModalMensaje = document.getElementById("img-mensaje");
 const botonMensaje = document.getElementById("btn-mensaje");
 
 const toggleBackdrop = () => {
@@ -48,6 +52,26 @@ const ocultarMensajes = () => {
     modalMensajes.classList.remove("visible");
 }
 
+const mostrarTextComplementario = () => {
+    complementarioModalMensaje.classList.remove("invisible");
+}
+
+const mostrarImagen = () => {
+    imagenModalMensaje.classList.remove("invisible");
+}
+
+const ocultarTextComplementario = () => {
+    complementarioModalMensaje.classList.add("invisible");
+}
+
+const ocultarImagen = () => {
+    imagenModalMensaje.classList.add("invisible");
+}
+
+const ocultarBotonMensajes = () => {
+    botonMensaje.className.add("invisible");
+}
+
 botonJugar.onclick = function() {
     ocultarInstrucciones();
     toggleBackdrop();
@@ -64,7 +88,15 @@ botonMensaje.onclick = () => {
         toggleBackdrop();
         botonMensaje.classList.remove("alerta");
     } else {
-        palabraParaAdivinar = palabrasParaAdivinar[contador];
+        if (contador === palabrasParaAdivinar.length) {
+            tituloModalMensaje.textContent = "No quedan mas Palabras. Gracias por Jugar!";
+            ocultarTextComplementario();
+            ocultarImagen();
+            ocultarBotonMensajes();
+            return
+        }
+        palabraParaAdivinar = palabrasParaAdivinar[contador]['key'];
+        explicacionPalabra = palabrasParaAdivinar[contador]['explicacion'];
         adivinanzaActual = [];
         proximaLetra = 0;
         adivinanzasPendientes = INTENTOS;
@@ -148,7 +180,9 @@ function checkGuess () {
 
     if (intentoPalabra.length != palabraParaAdivinar.length) {
         toggleBackdrop();
-        modalMensajes.firstElementChild.textContent = "Faltan completar Letras!";
+        tituloModalMensaje.textContent = "Faltan completar Letras!";
+        ocultarTextComplementario();
+        ocultarImagen();
         botonMensaje.textContent = "Continuar"
         botonMensaje.classList.add("alerta");
         mostrarMensaje();
@@ -157,7 +191,9 @@ function checkGuess () {
 
     if (!PALABRAS_ESP.includes(intentoPalabra)) {
         toggleBackdrop();
-        modalMensajes.firstElementChild.textContent = "La Palabra no se encuentra en la lista!";
+        tituloModalMensaje.textContent = "La Palabra no se encuentra en la lista!";
+        ocultarTextComplementario();
+        ocultarImagen();
         botonMensaje.textContent = "Continuar"
         botonMensaje.classList.add("alerta");
         mostrarMensaje();
@@ -166,32 +202,26 @@ function checkGuess () {
 
     
     for (let i = 0; i < palabraParaAdivinar.length; i++) {
-        let colorDeLetra = ''
-        let casillero = fila.children[i]
-        let letra = adivinanzaActual[i]
+        let colorDeLetra = '';
+        let casillero = fila.children[i];
+        let letra = adivinanzaActual[i];
         
-        let positionDeLaLetra = palabraCorrecta.indexOf(adivinanzaActual[i])
-        // is letter in the correct guess
+        let positionDeLaLetra = palabraCorrecta.indexOf(adivinanzaActual[i]);
         if (positionDeLaLetra === -1) {
-            colorDeLetra = 'grey'
+            colorDeLetra = 'grey';
         } else {
-            // now, letter is definitely in word
-            // if letter index and right guess index are the same
-            // letter is in the right position 
             if (adivinanzaActual[i] === palabraCorrecta[i]) {
-                // shade green 
-                colorDeLetra = 'green'
+                colorDeLetra = 'green';
             } else {
                 // shade box yellow
-                colorDeLetra = 'yellow'
+                colorDeLetra = 'yellow';
             }
 
-            palabraCorrecta[positionDeLaLetra] = "#"
+            palabraCorrecta[positionDeLaLetra] = "#";
         }
 
-        let demora = 250 * i
-        setTimeout(()=> {
-            //shade box
+        let demora = 250 * i;
+        setTimeout(() => {
             casillero.style.backgroundColor = colorDeLetra
             shadeKeyBoard(letra, colorDeLetra, false)
         }, demora)
@@ -199,7 +229,12 @@ function checkGuess () {
 
     setTimeout(() => {
         if (intentoPalabra === palabraParaAdivinar) {
-            modalMensajes.firstElementChild.textContent = "Adivinaste! Bien Hecho!";
+            tituloModalMensaje.textContent = "Adivinaste! Bien Hecho!";
+            mostrarTextComplementario();
+            mostrarImagen();
+            imagenModalMensaje.src = `../img/wordle/img-${palabraParaAdivinar}.jpg`
+            imagenModalMensaje.alt = `Una imagen de ${palabraParaAdivinar}`;
+            complementarioModalMensaje.textContent = explicacionPalabra
             botonMensaje.textContent = "Proxima Palabra"
             toggleBackdrop();
             mostrarMensaje();
@@ -211,7 +246,12 @@ function checkGuess () {
             proximaLetra = 0;
     
             if (adivinanzasPendientes === 0) {
-                modalMensajes.firstElementChild.textContent = `Te quedaste sin intentos, la palabra correcta era: "${palabraParaAdivinar}".`;
+                tituloModalMensaje.textContent = `Te quedaste sin intentos, la palabra correcta era: "${palabraParaAdivinar}".`;
+                mostrarTextComplementario();
+                mostrarImagen();
+                imagenModalMensaje.src = `../img/wordle/img-${palabraParaAdivinar}.jpg`;
+                imagenModalMensaje.alt = `Una imagen de ${palabraParaAdivinar}`;
+                complementarioModalMensaje.textContent = explicacionPalabra;
                 botonMensaje.textContent = "Jugar de Nuevo!"
                 toggleBackdrop();
                 mostrarMensaje();
@@ -260,15 +300,18 @@ document.addEventListener("keyup", (e) => {
     }
 
     if (letraPresionada === "Enter") {
-        checkGuess()
-        return
+        if (modalMensajes.classList.contains("visible")) {
+            return;
+        }
+        checkGuess();
+        return;
     }
 
     let found = letraPresionada.match(/[a-zA-ZñÑ\s]/gi)
     if (!found || found.length > 1) {
-        return
+        return;
     } else {
-        insertarLetra(letraPresionada)
+        insertarLetra(letraPresionada);
     }
 })
 
