@@ -39,6 +39,7 @@ a:link, a:hover {
     border-radius: 25px;
     padding: 10px;
     margin: 0.25rem 0;
+    margin-inline: auto;
 }
 
 .juegos:hover {
@@ -53,4 +54,17 @@ a:link, a:hover {
 .juegos img{
     border-radius: 5%;
     height: 100px;
+}
+
+main div a{
+    width: 33%;
+}
+
+@media (max-width: 768px) {
+    .links-juegos {
+        flex-direction: column;
+        align-items: center;
+        margin-inline: auto;
+        display: unset;
+    }
 }
