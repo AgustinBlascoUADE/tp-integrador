@@ -174,3 +174,35 @@ footer p {
 .tablero-juego {
     margin: 50px;
 }
+
+#navbarNav{
+    justify-content: end;
+    width: 100%;
+}
+
+ul.navbar-nav{
+    background-color: #fefefe;
+    border-radius: 25px;
+    margin-right: 45px;
+}
+
+.nav-item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+@media (max-width: 850px) {
+    ul.navbar-nav {
+        background-color: unset;
+        border-radius: unset;
+    }
+
+    .nav-item {
+        margin-top: unset;
+        margin-bottom: unset;
+        margin-right: unset;
+        margin-left: unset;
+    }
+}

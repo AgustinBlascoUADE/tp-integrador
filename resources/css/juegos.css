@@ -12,9 +12,12 @@ main li {
 }
 
 .subtitulo {
+    margin-inline: auto;
+    width: 80%;
     text-align: center;
     padding: 1%;
 }
+
 
 a {
     text-decoration: none;
