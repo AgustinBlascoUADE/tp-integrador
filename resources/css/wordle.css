@@ -53,6 +53,15 @@ h1 {
   cursor: pointer;
   text-transform: uppercase;
   border-radius: 0.625rem;
+  border: #aaa 2px solid;
+}
+
+button.keyboard-button {
+  background-color: #fff !important;
+}
+
+button.keyboard-button:hover {
+  background-color: #ddd !important;
 }
 
 #modal-mensaje {
@@ -71,10 +80,41 @@ h1 {
   left: 5%;
   border-radius: 0.5rem;
   display: none;
+  place-items: center;
 }
+
 
 #modal-mensaje.visible {
   display: grid;
+}
+
+#modal-mensaje #titulo-mensaje {
+  padding-bottom: 1.25rem;
+  font-size: large;
+}
+
+#modal-mensaje #titulo-mensaje .sin-palabras {
+  font-size: large;
+}
+
+#modal-mensaje #img-mensaje {
+  border-radius: 0.5rem;
+  height: 200px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.invisible {
+  display: none;
+}
+
+#modal-mensaje #complementario {
+  padding-bottom: 1.25rem;
+}
+
+#modal-mensaje #btn-mensaje {
+  border-radius: 0.5rem;
 }
 
 @keyframes animatetop {
