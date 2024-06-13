@@ -1,168 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Safe Road - Wordle</title>
-    <link rel="stylesheet" href="../resources/css/wordle.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <!-- Agrega las referencias a Bootstrap -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../resources/css/estilos_integrador.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-      defer
-    ></script>
-    <script src="../resources/js/wordle.js" type="module" defer></script>
-    <link rel="icon" type="image/x-icon" href="../img/safeRoad-logo.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="../index.html">
-        <img
-          class="logo-saferoad"
-          src="../img/Red_Silver_Simple_Elegant_Car_Dealer_Logo_6.png"
-          alt="SafeRoad Logo"
-        />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../integrantes.html">Integrantes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../avances.html">Avances</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="../juegos.html">Juegos</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div id="backdrop"></div>
-    <div id="instrucciones-modal">
-      <h2>Instrucciones</h2>
-      <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
-      <ul>
-        <li>
-          El objetivo del juego es encontrar la palabra oculta antes de quedarse
-          sin intentos.
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe Road - Wordle</title>
+  <link rel="stylesheet" href="../resources/css/wordle.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Agrega las referencias a Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../resources/css/estilos_integrador.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer></script>
+  <script src="../resources/js/wordle.js" type="module" defer></script>
+  <link rel="icon" type="image/x-icon" href="../img/safeRoad-logo.png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="../index.html">
+      <img class="logo-saferoad" src="../img/Red_Silver_Simple_Elegant_Car_Dealer_Logo_6.png" alt="SafeRoad Logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li>Solo se admiten palabras en español y en singular.</li>
-        <li>
-          Si una letra esta en color verde, quiere decir que esta en el sitio
-          correcto.
+        <li class="nav-item">
+          <a class="nav-link" href="../integrantes.html">Integrantes</a>
         </li>
-        <li>
-          Si una letra esta en color amarillo, quiere decir que es parte de la
-          palabra pero esta en un sitio incorrecto.
+        <li class="nav-item">
+          <a class="nav-link" href="../avances.html">Avances</a>
         </li>
-        <li>
-          Si una letra esta en color gris, quiere decir que esa letra no
-          pertenece a la palabra oculta
+        <li class="nav-item dropdown active">
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Juegos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="../juegos.html">Juegos Menu</a>
+            <a class="dropdown-item" href="horcado.html">Horcado</a>
+            <a class="dropdown-item" href="memotest.html">Memotest</a>
+            <a class="dropdown-item" href="signal-match.html">Signal Match</a>
+            <a class="dropdown-item" href="trivia.html">Trivia</a>
+            <a class="dropdown-item" href="wordle-seguridad-vial.html">Wordle</a>
+          </div>
         </li>
-        <li>Se puede utilizar el Teclado de la PC o las teclas en pantalla.</li>
-        <p>Creado por Blasco, Agustin</p>
       </ul>
-      <button id="btn-jugar">Empezar a Jugar!</button>
+    </div>
+  </nav>
+  <div id="backdrop"></div>
+  <div id="instrucciones-modal">
+    <h2>Instrucciones</h2>
+    <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
+    <ul>
+      <li>
+        El objetivo del juego es encontrar la palabra oculta antes de quedarse
+        sin intentos.
+      </li>
+      <li>Solo se admiten palabras en español y en singular.</li>
+      <li>
+        Si una letra esta en color verde, quiere decir que esta en el sitio
+        correcto.
+      </li>
+      <li>
+        Si una letra esta en color amarillo, quiere decir que es parte de la
+        palabra pero esta en un sitio incorrecto.
+      </li>
+      <li>
+        Si una letra esta en color gris, quiere decir que esa letra no
+        pertenece a la palabra oculta
+      </li>
+      <li>Se puede utilizar el Teclado de la PC o las teclas en pantalla.</li>
+      <p>Creado por Blasco, Agustin</p>
+    </ul>
+    <button id="btn-jugar">Empezar a Jugar!</button>
+  </div>
+
+  <div id="modal-mensaje">
+    <p id="info"></p>
+    <p id="complementario"></p>
+    <button id="btn-mensaje"></button>
+  </div>
+  <div class="tablero-juego">
+    <div class="titulo-juego">
+      <h1>Safe Road Wordle</h1>
+      <button id="btn-ayuda">&quest;</button>
     </div>
 
-    <div id="modal-mensaje">
-      <p id="info"></p>
-      <p id="complementario"></p>
-      <button id="btn-mensaje"></button>
-    </div>
-    <div class="tablero-juego">
-      <div class="titulo-juego">
-        <h1>Safe Road Wordle</h1>
-        <button id="btn-ayuda">&quest;</button>
+    <div id="game-board"></div>
+    <div id="keyboard-cont">
+      <div class="first-row">
+        <button class="keyboard-button">q</button>
+        <button class="keyboard-button">w</button>
+        <button class="keyboard-button">e</button>
+        <button class="keyboard-button">r</button>
+        <button class="keyboard-button">t</button>
+        <button class="keyboard-button">y</button>
+        <button class="keyboard-button">u</button>
+        <button class="keyboard-button">i</button>
+        <button class="keyboard-button">o</button>
+        <button class="keyboard-button">p</button>
       </div>
+      <div class="second-row">
+        <button class="keyboard-button">a</button>
+        <button class="keyboard-button">s</button>
+        <button class="keyboard-button">d</button>
+        <button class="keyboard-button">f</button>
+        <button class="keyboard-button">g</button>
+        <button class="keyboard-button">h</button>
+        <button class="keyboard-button">j</button>
+        <button class="keyboard-button">k</button>
+        <button class="keyboard-button">l</button>
+        <button class="keyboard-button">ñ</button>
+      </div>
+      <div class="third-row">
+        <button class="keyboard-button">Del</button>
+        <button class="keyboard-button">z</button>
+        <button class="keyboard-button">x</button>
+        <button class="keyboard-button">c</button>
+        <button class="keyboard-button">v</button>
+        <button class="keyboard-button">b</button>
+        <button class="keyboard-button">n</button>
+        <button class="keyboard-button">m</button>
+        <button class="keyboard-button">Enter</button>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
+  <p>
+    Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
+    desarrollo Web - UADE - 2024
+  </p>
+</footer>
 
-      <div id="game-board"></div>
-      <div id="keyboard-cont">
-        <div class="first-row">
-          <button class="keyboard-button">q</button>
-          <button class="keyboard-button">w</button>
-          <button class="keyboard-button">e</button>
-          <button class="keyboard-button">r</button>
-          <button class="keyboard-button">t</button>
-          <button class="keyboard-button">y</button>
-          <button class="keyboard-button">u</button>
-          <button class="keyboard-button">i</button>
-          <button class="keyboard-button">o</button>
-          <button class="keyboard-button">p</button>
-        </div>
-        <div class="second-row">
-          <button class="keyboard-button">a</button>
-          <button class="keyboard-button">s</button>
-          <button class="keyboard-button">d</button>
-          <button class="keyboard-button">f</button>
-          <button class="keyboard-button">g</button>
-          <button class="keyboard-button">h</button>
-          <button class="keyboard-button">j</button>
-          <button class="keyboard-button">k</button>
-          <button class="keyboard-button">l</button>
-          <button class="keyboard-button">ñ</button>
-        </div>
-        <div class="third-row">
-          <button class="keyboard-button">Del</button>
-          <button class="keyboard-button">z</button>
-          <button class="keyboard-button">x</button>
-          <button class="keyboard-button">c</button>
-          <button class="keyboard-button">v</button>
-          <button class="keyboard-button">b</button>
-          <button class="keyboard-button">n</button>
-          <button class="keyboard-button">m</button>
-          <button class="keyboard-button">Enter</button>
-        </div>
-      </div>
-    </div>
-  </body>
-  <footer>
-    <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
-    <p>
-      Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
-      desarrollo Web - UADE - 2024
-    </p>
-  </footer>
 </html>
