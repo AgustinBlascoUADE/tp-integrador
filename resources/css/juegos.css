@@ -1,10 +1,32 @@
 .links-juegos {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-evenly;
     flex-wrap: wrap-reverse;
 }
-
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+.btn-primary {
+    margin-top: auto; /* Empuja el botón hacia abajo */
+  }
+.card img {
+    height: 250px;
+    width: 250px;
+}
+.card-img-top {
+    object-fit: contain;
+  }
 main li {
     list-style-type: none;
     padding: .5%;
