@@ -232,4 +232,8 @@ ul.navbar-nav{
     .titulo-juego button {
         margin-left: 0;
     }
+
+    .navbar-toggler {
+        margin-right: 1rem;
+    }
 }
