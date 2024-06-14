@@ -3,9 +3,11 @@ import { PALABRAS_ESP, PALABRAS_JUEGOS_EXPLICACION } from "./palabras-wordle.js"
 const INTENTOS = 6;
 let adivinanzaActual = [];
 let proximaLetra = 0;
-let contador = 0;
 let adivinanzasPendientes = INTENTOS;
 let tablero = document.getElementById("game-board");
+let palabraParaAdivinar;
+let explicacionPalabra;
+
 
 const mezlcarPalabras = (arrayPalabras) => {
     let array = [...arrayPalabras];
@@ -17,8 +19,19 @@ const mezlcarPalabras = (arrayPalabras) => {
 };
 
 const palabrasParaAdivinar = mezlcarPalabras(PALABRAS_JUEGOS_EXPLICACION);
-let palabraParaAdivinar = palabrasParaAdivinar[contador]['key'];
-let explicacionPalabra = palabrasParaAdivinar[contador]['explicacion'];
+
+const obtenerProximaPalabra = () => {
+    const proximaPalabra = palabrasParaAdivinar.pop();
+    return proximaPalabra;
+}
+
+const obtenerPalabraYExplicacion = () => {
+    let palabraExplicacion = obtenerProximaPalabra();
+    palabraParaAdivinar = palabraExplicacion['key'];
+    explicacionPalabra = palabraExplicacion['explicacion'];
+}
+
+obtenerPalabraYExplicacion();
 
 // Instrucciones
 
@@ -59,8 +72,10 @@ const ocultarImagen = () => {
 }
 
 const ocultarBotonMensajes = () => {
-    botonMensaje.className.add("invisible");
+    botonMensaje.classList.add("invisible");
 }
+
+
 
 botonMensaje.onclick = () => {
     if (botonMensaje.classList.contains("alerta")) {
@@ -68,7 +83,7 @@ botonMensaje.onclick = () => {
         toggleBackdrop();
         botonMensaje.classList.remove("alerta");
     } else {
-        if (contador === palabrasParaAdivinar.length) {
+        if (palabrasParaAdivinar.length === 0) {
             tituloModalMensaje.textContent = "No quedan mas Palabras. Gracias por Jugar!";
             botonMensaje.style.display = 'none';
             ocultarTextComplementario();
@@ -76,8 +91,9 @@ botonMensaje.onclick = () => {
             ocultarBotonMensajes();
             return
         }
-        palabraParaAdivinar = palabrasParaAdivinar[contador]['key'];
-        explicacionPalabra = palabrasParaAdivinar[contador]['explicacion'];
+        obtenerPalabraYExplicacion();
+        // palabraParaAdivinar = palabrasParaAdivinar[contador]['key'];
+        // explicacionPalabra = palabrasParaAdivinar[contador]['explicacion'];
         adivinanzaActual = [];
         proximaLetra = 0;
         adivinanzasPendientes = INTENTOS;
@@ -219,6 +235,7 @@ function checkGuess () {
             toggleBackdrop();
             mostrarMensaje();
             adivinanzasPendientes = 0
+            // contador++;
             return
         } else {
             adivinanzasPendientes -= 1;
@@ -232,13 +249,12 @@ function checkGuess () {
                 imagenModalMensaje.src = `../img/wordle/img-${palabraParaAdivinar}.jpg`;
                 imagenModalMensaje.alt = `Una imagen de ${palabraParaAdivinar}`;
                 complementarioModalMensaje.textContent = explicacionPalabra;
-                botonMensaje.textContent = "Jugar de Nuevo!"
+                botonMensaje.textContent = "Proxima Palabra"
                 toggleBackdrop();
                 mostrarMensaje();
             }
         }
     }, demoraTotal)
-    contador++;
 }
 
 
@@ -266,6 +282,7 @@ function shadeKeyBoard(letra, color, reset) {
 
 iniciarTablero();
 botonAyuda.click();
+// obtenerPalabraYExplicacion();
 
 document.addEventListener("keyup", (e) => {
 
