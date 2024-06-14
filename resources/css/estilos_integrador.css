@@ -1,3 +1,9 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+}
+
 body, h1, h2, h3, h4, h5, h6, p, ul, li {
     margin: 0;
     padding: 0;
@@ -104,8 +110,13 @@ footer p {
 
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
-    to {top: 116px; opacity: 1}
-  }
+    to {top: 10px; opacity: 1}
+}
+
+@keyframes animatetop-mensajes {
+    from {top: -300px; opacity: 0}
+    to {top: 100px; opacity: 1}
+}
 
 #backdrop {
     position: fixed;
@@ -124,50 +135,49 @@ footer p {
     pointer-events: all;
 }
 
-#instrucciones-modal {
-    position: fixed;
-    background-color: #fefefe;
-    padding: 2rem;
-    padding-top: 1.2rem;
-    border: 1px solid #888;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+#modal-instrucciones {
     animation-name: animatetop;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    display: grid;
-    z-index: 1000;
-    right: 5%;
-    left: 5%;
     border-radius: 0.5rem;
 }
   
-#instrucciones-modal.invisible {
-    display: none;
-}
-  
-#instrucciones-modal h2 {
+#modal-instrucciones h1, h2 {
     text-align: center;
     color: #007ea7;
     padding-bottom: 0.625rem;
 }
 
-#instrucciones-modal p {
+#modal-instrucciones p {
     text-align: center;
 }
 
-#instrucciones-modal li {
+#modal-instrucciones li {
     list-style: url('../../img/car-front-fill.svg');
     padding-bottom: 0.125rem;
     margin: 0 1.25rem;
 }
   
-#instrucciones-modal ul {
+#modal-instrucciones ul {
     padding: 1.25rem 0;
+    margin: 0 1.25rem;
 }
 
 #btn-jugar {
     border-radius: 0.5rem;
     border: 2px solid black;
+}
+
+#btn-ayuda {
+    padding: 0;
+    border: none;
+    background-color: #007ea7;
+}
+
+#btn-ayuda:hover,
+#btn-ayuda:checked {
+    background-color: white;
+    color: #007ea7;
 }
 
 .tablero-juego {
@@ -203,5 +213,17 @@ ul.navbar-nav{
         margin-bottom: unset;
         margin-right: unset;
         margin-left: unset;
+    }
+
+    .tablero-juego {
+        margin: 0;
+    }
+    
+    .titulo-juego {
+        flex-direction: column;
+    }
+
+    .titulo-juego button {
+        margin-left: 0;
     }
 }
