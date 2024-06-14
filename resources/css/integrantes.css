@@ -25,18 +25,17 @@ main h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    width: 100%;
     margin-inline: auto;
     justify-content: space-around;
   }
 
-  .integrante {
+.integrante {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    width: 33%; /* default width */
-    height: auto;
+    align-items: center;    
+    width: 50%;
+    height: 50%;
 }
 
 .integrante:nth-child(4), .integrante:nth-child(5) {
