@@ -19,11 +19,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
     align-items: center;
 }
 
-.imagenes img{
-    border: 2px solid black;
+.imagenes img{    
     border-radius: 25px;
-    height: 350px; 
-    width: 250px;
+    height: 100%; 
+    width: 100%;
 }
 
 .image-container {
@@ -48,7 +47,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .logo-saferoad {
-    width: 100px;
+    width: 120px;
 }
 
 .logo-uade-footer {
