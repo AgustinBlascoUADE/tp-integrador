@@ -1,3 +1,9 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+}
+
 body, h1, h2, h3, h4, h5, h6, p, ul, li {
     margin: 0;
     padding: 0;
@@ -107,6 +113,28 @@ footer p {
     to {top: 10px; opacity: 1}
 }
 
+@keyframes animatetop-mensajes {
+    from {top: -300px; opacity: 0}
+    to {top: 100px; opacity: 1}
+}
+
+#backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 999;
+    pointer-events: none;
+    display: none;
+}
+
+#backdrop.visible {
+    display: block;
+    pointer-events: all;
+}
+
 #modal-instrucciones {
     animation-name: animatetop;
     animation-duration: 1s;
@@ -132,11 +160,24 @@ footer p {
   
 #modal-instrucciones ul {
     padding: 1.25rem 0;
+    margin: 0 1.25rem;
 }
 
 #btn-jugar {
     border-radius: 0.5rem;
     border: 2px solid black;
+}
+
+#btn-ayuda {
+    padding: 0;
+    border: none;
+    background-color: #007ea7;
+}
+
+#btn-ayuda:hover,
+#btn-ayuda:checked {
+    background-color: white;
+    color: #007ea7;
 }
 
 .tablero-juego {
@@ -172,5 +213,17 @@ ul.navbar-nav{
         margin-bottom: unset;
         margin-right: unset;
         margin-left: unset;
+    }
+
+    .tablero-juego {
+        margin: 0;
+    }
+    
+    .titulo-juego {
+        flex-direction: column;
+    }
+
+    .titulo-juego button {
+        margin-left: 0;
     }
 }
