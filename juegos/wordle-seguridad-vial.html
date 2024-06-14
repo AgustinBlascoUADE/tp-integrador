@@ -100,7 +100,66 @@
         </ul>
       </div>
     </nav>
-    <div id="backdrop"></div>
+    <div class="container">
+      <div class="modal" id="modal-instrucciones">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h1 class="modal-title">Instrucciones</h1>
+              <button type="button" class="close" data-dismiss="modal">
+                ×
+              </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
+              <ul>
+                <li>
+                  El objetivo del juego es encontrar la palabra oculta antes de
+                  quedarse sin intentos.
+                </li>
+                <li>Solo se admiten palabras en español y en singular.</li>
+                <li>
+                  Si una letra esta en color verde, quiere decir que esta en el
+                  sitio correcto.
+                </li>
+                <li>
+                  Si una letra esta en color amarillo, quiere decir que es parte
+                  de la palabra pero esta en un sitio incorrecto.
+                </li>
+                <li>
+                  Si una letra esta en color gris, quiere decir que esa letra no
+                  pertenece a la palabra oculta
+                </li>
+                <li>
+                  Se puede utilizar el teclado de la PC o las teclas en
+                  pantalla.
+                </li>
+                <li>
+                  Se puede utilizar el teclado de la PC o las teclas en
+                  pantalla.
+                </li>
+                <li>
+                  Se puede utilizar el teclado de la PC o las teclas en
+                  pantalla.
+                </li>
+                <p>Creado por Blasco, Agustin</p>
+              </ul>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="backdrop"></div>
     <div id="instrucciones-modal">
       <h2>Instrucciones</h2>
       <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
@@ -126,7 +185,7 @@
         <p>Creado por Blasco, Agustin</p>
       </ul>
       <button id="btn-jugar">Empezar a Jugar!</button>
-    </div>
+    </div> -->
 
     <div id="modal-mensaje">
       <p id="titulo-mensaje" class="sin-palabras"></p>
@@ -137,7 +196,15 @@
     <div class="tablero-juego">
       <div class="titulo-juego">
         <h1>Safe Road Wordle</h1>
-        <button id="btn-ayuda">&quest;</button>
+        <button
+          id="btn-ayuda"
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#modal-instrucciones"
+        >
+          &quest;
+        </button>
       </div>
 
       <div id="game-board"></div>

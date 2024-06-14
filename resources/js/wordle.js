@@ -72,15 +72,15 @@ const ocultarBotonMensajes = () => {
     botonMensaje.className.add("invisible");
 }
 
-botonJugar.onclick = function() {
-    ocultarInstrucciones();
-    toggleBackdrop();
-}
+// botonJugar.onclick = function() {
+    // ocultarInstrucciones();
+    // toggleBackdrop();
+// }
 
-botonAyuda.onclick = function() {
-    mostrarInstrucciones();
-    toggleBackdrop();
-}
+// botonAyuda.onclick = function() {
+//     mostrarInstrucciones();
+//     toggleBackdrop();
+// }
 
 botonMensaje.onclick = () => {
     if (botonMensaje.classList.contains("alerta")) {
@@ -285,7 +285,7 @@ function shadeKeyBoard(letra, color, reset) {
 }
 
 iniciarTablero();
-toggleBackdrop();
+// toggleBackdrop();
 
 document.addEventListener("keyup", (e) => {
 
