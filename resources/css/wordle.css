@@ -54,14 +54,7 @@ h1 {
   text-transform: uppercase;
   border-radius: 0.625rem;
   border: #aaa 2px solid;
-}
-
-button.keyboard-button {
-  background-color: #fff !important;
-}
-
-button.keyboard-button:hover {
-  background-color: #ddd !important;
+  
 }
 
 #modal-mensaje {
@@ -71,7 +64,7 @@ button.keyboard-button:hover {
   padding-top: 1.2rem;
   border: 1px solid #888;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  animation-name: animatetop;
+  animation-name: animatetop-mensajes;
   animation-duration: 1s;
   animation-fill-mode: forwards; 
   display: grid;
@@ -115,11 +108,13 @@ button.keyboard-button:hover {
 
 #modal-mensaje #btn-mensaje {
   border-radius: 0.5rem;
+  border: none;
+  padding: 0.625rem;
 }
 
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
-  to {top: 116px; opacity: 1}
+  to {top: 500px; opacity: 1}
 }
 
 .verde {
@@ -147,6 +142,10 @@ button.keyboard-button:hover {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+  }
+
+  #img-mensaje {
+    max-width: 250px;
   }
 
 }

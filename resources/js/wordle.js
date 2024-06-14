@@ -22,8 +22,6 @@ let explicacionPalabra = palabrasParaAdivinar[contador]['explicacion'];
 
 // Instrucciones
 
-const botonJugar = document.getElementById("btn-jugar");
-const modalInstrucciones = document.getElementById("instrucciones-modal");
 const botonAyuda = document.getElementById("btn-ayuda");
 const backdrop = document.getElementById("backdrop")
 const modalMensajes = document.getElementById("modal-mensaje");
@@ -36,16 +34,8 @@ const toggleBackdrop = () => {
     backdrop.classList.toggle("visible")
 }
 
-const mostrarInstrucciones = () => {
-    modalInstrucciones.classList.remove("invisible");
-}
-
 const mostrarMensaje = () => {
     modalMensajes.classList.add("visible");
-}
-
-const ocultarInstrucciones = () => {
-    modalInstrucciones.classList.add("invisible");
 }
 
 const ocultarMensajes = () => {
@@ -72,16 +62,6 @@ const ocultarBotonMensajes = () => {
     botonMensaje.className.add("invisible");
 }
 
-botonJugar.onclick = function() {
-    ocultarInstrucciones();
-    toggleBackdrop();
-}
-
-botonAyuda.onclick = function() {
-    mostrarInstrucciones();
-    toggleBackdrop();
-}
-
 botonMensaje.onclick = () => {
     if (botonMensaje.classList.contains("alerta")) {
         ocultarMensajes();
@@ -90,6 +70,7 @@ botonMensaje.onclick = () => {
     } else {
         if (contador === palabrasParaAdivinar.length) {
             tituloModalMensaje.textContent = "No quedan mas Palabras. Gracias por Jugar!";
+            botonMensaje.style.display = 'none';
             ocultarTextComplementario();
             ocultarImagen();
             ocultarBotonMensajes();
@@ -111,7 +92,6 @@ botonMensaje.onclick = () => {
 
 window.onclick = function(event) {
     if (event.target == backdrop) {
-        ocultarInstrucciones();
         toggleBackdrop();
         ocultarMensajes();
     }
@@ -285,7 +265,7 @@ function shadeKeyBoard(letra, color, reset) {
 }
 
 iniciarTablero();
-toggleBackdrop();
+botonAyuda.click();
 
 document.addEventListener("keyup", (e) => {
 
