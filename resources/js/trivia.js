@@ -136,7 +136,7 @@ function comenzarJuego() {
   cantidadAcertadas = 0;
   //activamos las pantallas necesarias
   document.getElementById("pantalla-inicial").style.display = "none";
-  document.getElementById("pantalla-juego").style.display = "block";
+  document.getElementById("pantalla-juego").style.display = "flex";
   cargarBandera();
   juegoEmpezado = true;
 }
@@ -202,6 +202,7 @@ function terminarJuego() {
   document.getElementById("numCorrectas").innerHTML = cantidadAcertadas;
   document.getElementById("numIncorrectas").innerHTML =
     señales.length - cantidadAcertadas;
+    juegoEmpezado = false;
 }
 
 function volverAlInicio() {
@@ -209,7 +210,7 @@ function volverAlInicio() {
   document.getElementById("pantalla-final").style.display = "none";
   document.getElementById("pantalla-inicial").style.display = "block";
   document.getElementById("pantalla-juego").style.display = "none";
-  document.getElementById("pantalla-respuestas").style.display = "none";
+  botonAyuda.click();
 }
 
 window.onload = function () {
@@ -229,49 +230,14 @@ function HojaRespuestas() {
   document.getElementById("pantalla-final").style.display = "none";
   document.getElementById("pantalla-inicial").style.display = "none";
   document.getElementById("pantalla-juego").style.display = "none";
-  document.getElementById("pantalla-respuestas").style.display = "block";
 }
 
-// Instrucciones
-
-const botonJugar = document.getElementById("btn-jugar");
-const modalInstrucciones = document.getElementById("instrucciones-modal");
 const botonAyuda = document.getElementById("btn-ayuda");
-const backdrop = document.getElementById("backdrop")
+const botonComienzoJuego = document.getElementById("btn-comienzo-juego");
 
-const toggleBackdrop = () => {
-  backdrop.classList.toggle("visible")
+// botonAyuda.click();
+botonComienzoJuego.onclick = function() {
+  if (!juegoEmpezado) {
+    comenzarJuego();
+  }
 }
-
-const mostrarInstrucciones = () => {
-  modalInstrucciones.classList.remove("invisible");
-}
-
-const ocultarInstrucciones = () => {
-  modalInstrucciones.classList.add("invisible");
-}
-
-botonJugar.onclick = function() {
-    ocultarInstrucciones();
-    toggleBackdrop();
-    if (!juegoEmpezado) {
-      comenzarJuego();
-    }
-}
-
-botonAyuda.onclick = function() {
-    mostrarInstrucciones();
-    toggleBackdrop();
-}
-
-window.onclick = function(event) {
-    if (event.target == backdrop) {
-      ocultarInstrucciones();
-      toggleBackdrop();
-      if (!juegoEmpezado) {
-        comenzarJuego();
-      }
-    }
-}
-
-toggleBackdrop();

@@ -96,38 +96,6 @@ document.querySelector('#reiniciar').addEventListener('click', reiniciarJuego);
 
 // Instrucciones
 
-const botonJugar = document.getElementById("btn-jugar");
-const modalInstrucciones = document.getElementById("instrucciones-modal");
 const botonAyuda = document.getElementById("btn-ayuda");
-const backdrop = document.getElementById("backdrop")
 
-const toggleBackdrop = () => {
-    backdrop.classList.toggle("visible")
-}
-
-const ocultarInstrucciones = () => {
-    modalInstrucciones.classList.add("invisible");
-}
-
-const mostrarInstrucciones = () => {
-    modalInstrucciones.classList.remove("invisible");
-}
-
-botonJugar.onclick = function() {
-    ocultarInstrucciones();
-    toggleBackdrop();
-}
-
-botonAyuda.onclick = function() {
-    mostrarInstrucciones();
-    toggleBackdrop();
-}
-
-window.onclick = function(event) {
-    if (event.target == backdrop) {
-        toggleBackdrop();
-        ocultarInstrucciones();
-    }
-}
-
-toggleBackdrop();
+botonAyuda.click();

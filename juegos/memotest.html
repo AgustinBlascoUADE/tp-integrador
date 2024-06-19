@@ -1,110 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Road - Juegos</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../resources/css/estilos_integrador.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="../img/safeRoad-logo.png" />
+    <link
+      type="text/css"
+      href="../resources/css/memotest.css"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="../resources/js/jquery-1.7.2.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../resources/js/memotest.js"
+      defer
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safe Road - Juegos</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="../resources/css/estilos_integrador.css" />
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link rel="icon" type="image/x-icon" href="../img/safeRoad-logo.png" />
-  <link type="text/css" href="../resources/css/memotest.css" rel="stylesheet" />
-  <script type="text/javascript" src="../resources/js/jquery-1.7.2.js"></script>
-  <script type="text/javascript" src="../resources/js/memotest.js" defer></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="../index.html">
+        <img
+          class="logo-saferoad"
+          src="../img/Red_Silver_Simple_Elegant_Car_Dealer_Logo_6.png"
+          alt="SafeRoad Logo"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../integrantes.html">Integrantes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../avances.html">Avances</a>
+          </li>
+          <li class="nav-item dropdown active">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Juegos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="../juegos.html">Juegos Menu</a>
+              <a class="dropdown-item" href="horcado.html">Ahorcado</a>
+              <a class="dropdown-item" href="memotest.html">Memotest</a>
+              <a class="dropdown-item" href="signal-match.html">Signal Match</a>
+              <a class="dropdown-item" href="trivia.html">Trivia</a>
+              <a class="dropdown-item" href="wordle-seguridad-vial.html"
+                >Wordle</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="modal" id="modal-instrucciones">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h1 class="modal-title">Instrucciones</h1>
+              <button type="button" class="close" data-dismiss="modal">
+                ×
+              </button>
+            </div>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="../index.html">
-      <img class="logo-saferoad" src="../img/Red_Silver_Simple_Elegant_Car_Dealer_Logo_6.png" alt="SafeRoad Logo" />
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../integrantes.html">Integrantes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../avances.html">Avances</a>
-        </li>
-        <li class="nav-item dropdown active">
-          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Juegos
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../juegos.html">Juegos Menu</a>
-            <a class="dropdown-item" href="horcado.html">Horcado</a>
-            <a class="dropdown-item" href="memotest.html">Memotest</a>
-            <a class="dropdown-item" href="signal-match.html">Signal Match</a>
-            <a class="dropdown-item" href="trivia.html">Trivia</a>
-            <a class="dropdown-item" href="wordle-seguridad-vial.html">Wordle</a>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
+              <ul>
+                <li>
+                  El objetivo del juego es encontrar el par de imagenes iguales
+                  en el menor tiempo posible.
+                </li>
+              </ul>
+              <p>Creado por Maneiro, Mauricio</p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Empezar a Jugar!
+              </button>
+            </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
-  </nav>
+    <div class="tablero-juego">
+      <div class="titulo-juego">
+        <h1>Memotest</h1>
+        <button
+          id="btn-ayuda"
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#modal-instrucciones"
+        >
+          &quest;
+        </button>
+      </div>
 
-  <div id="backdrop"></div>
-  <div id="instrucciones-modal">
-    <h2>Instrucciones</h2>
-    <p>¡Bienvenidos a nuestro juego sobre seguridad vial!</p>
-    <ul>
-      <li>
-        El objetivo del juego es encontrar el par de imagenes iguales en el
-        menor tiempo posible.
-      </li>
-      <p>Creado por Maneiro, Mauricio</p>
-    </ul>
-    <button id="btn-jugar">Empezar a Jugar!</button>
-  </div>
-  <div class="tablero-juego">
-    <div class="titulo-juego">
-      <h1>Memotest</h1>
-      <button id="btn-ayuda">&quest;</button>
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $('#mesa').memotest(
+            '../img/memotest/blanco.png',
+            new Array(
+              '../img/memotest/cruce.png',
+              '../img/memotest/doble.png',
+              '../img/memotest/estacion.png',
+              '../img/memotest/estacionamiento.png',
+              '../img/memotest/hospital.png',
+              '../img/memotest/paso.png',
+              '../img/memotest/reduccion.png',
+              '../img/memotest/sobrepasar.png',
+              '../img/memotest/telefono.png',
+              '../img/memotest/velocidad.png'
+            )
+          );
+        });
+      </script>
+      <div id="mesa"></div>
+      <div class="clear"></div>
     </div>
-
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#mesa').memotest(
-          '../img/memotest/blanco.png',
-          new Array(
-            '../img/memotest/cruce.png',
-            '../img/memotest/doble.png',
-            '../img/memotest/estacion.png',
-            '../img/memotest/estacionamiento.png',
-            '../img/memotest/hospital.png',
-            '../img/memotest/paso.png',
-            '../img/memotest/reduccion.png',
-            '../img/memotest/sobrepasar.png',
-            '../img/memotest/telefono.png',
-            '../img/memotest/velocidad.png'
-          )
-        );
-      });
-    </script>
-    <div id="mesa"></div>
-    <div class="clear"></div>
-  </div>
-  <footer>
-    <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
-    <p>
-      Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
-      desarrollo Web - UADE - 2024
-    </p>
-  </footer>
-</body>
-
+    <footer>
+      <img class="logo-uade-footer" src="../img/logouade.png" alt="Logo UADE" />
+      <p>
+        Derechos reservados - Sitio desarrollado para uso educativo - Diseño y
+        desarrollo Web - UADE - 2024
+      </p>
+    </footer>
+  </body>
 </html>

@@ -1,3 +1,14 @@
+main {
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 .parent div p {
     text-align: center;
     margin-top: 5px;
@@ -8,4 +19,37 @@ main h1 {
     margin: 20px;
     color: #007ea7;
     padding: 10px 0;
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-inline: auto;
+    justify-content: space-around;
+  }
+
+.integrante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: 50%;
+    height: 50%;
+}
+
+.integrante:nth-child(4), .integrante:nth-child(5) {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .parent {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .integrante, .integrante:nth-child(4), .integrante:nth-child(5) {
+      width: 100%;
+      margin: 10px 0; 
+    }
 }

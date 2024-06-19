@@ -142,3 +142,22 @@ main ul li a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-inline: auto;
 }
+
+@media (max-width: 768px) {
+    main {
+        max-width: 90%;
+    }
+
+    .caja-colores {
+        width: 320px !important;
+        justify-content: center !important;
+        gap: 2rem;
+        /* margin-left: -0.5rem; */
+    }
+
+    .clase-colores {
+        width: 80px !important;
+        height: 80px !important;
+        font-size: 0.8rem !important;
+    }
+}

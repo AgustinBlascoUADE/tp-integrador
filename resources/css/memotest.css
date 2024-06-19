@@ -35,3 +35,26 @@
 .clear {
     clear: both;
 }
+
+@media (max-width: 800px) {
+    #mesa {
+      width: 100%;
+    }
+  
+    #mesa .cards-container { /* replace .cards-container with the actual class or id of the container */
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+  
+    #mesa img {
+      height: 40px;
+      width: 70px;
+    }
+  
+    #mesa .memotest_cartas {
+      margin: 10px;
+      width: 70px;
+      height: 40px;
+    }
+  }
